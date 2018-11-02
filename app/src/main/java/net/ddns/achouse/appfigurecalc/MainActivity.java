@@ -32,6 +32,20 @@ public class MainActivity extends AppCompatActivity {
         outState.putParcelableArrayList("listFigures", listFigures);
     }
 
+    protected double calculateAverageArea() {
+
+        double averageArea = 0;
+        double sum = 0;
+
+        for (int rows = 0; rows < listFigures.size(); rows++ ) {
+            sum = sum + listFigures.get(rows).getArea();
+        }
+
+        averageArea = sum / listFigures.size();
+
+        return averageArea;
+    }
+
     public void goToAddActivity(View v) {
         Intent Intent = new Intent(getBaseContext(),AddActivity.class);
         // Start AddActivity waiting for result
@@ -72,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         }
         bundle.putSerializable("figuresData", figuresData);
         bundle.putSerializable("figuresDataLength", Integer.toString(numberOfFigures));
+        bundle.putSerializable("figuresDataAverageArea", Double.toString(calculateAverageArea()));
         intent.putExtras(bundle);
         startActivity(intent);
     }
