@@ -62,6 +62,6 @@ public class DisplayActivity extends AppCompatActivity {
 
         //wyświetlenie statystyk czyli ilości figur
         TextView text1 = (TextView) findViewById(R.id.textView2);
-        text1.setText('5');
+        text1.setText((String) bundle.getSerializable("figuresDataLength"));
     }
 }

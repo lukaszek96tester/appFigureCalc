@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             figuresData[rows][3] = df.format(listFigures.get(rows).getPerimeter());
         }
         bundle.putSerializable("figuresData", figuresData);
+        bundle.putSerializable("figuresDataLength", Integer.toString(numberOfFigures));
         intent.putExtras(bundle);
         startActivity(intent);
     }
