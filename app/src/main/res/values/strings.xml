@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Figure Calculator</string>
+    <string name="text_second_page">Welcome to second Page</string>
+    <string name="MA_label_main">Hi, you are at first activity (main)</string>
+    <string name="MA_label_CreatedFigures">Created Figures</string>
+    <string name="MA_CreatedFigures">0</string>
+    <string name="MA_button_display">Display Figures</string>
+    <string name="MA_button_add">Add new Figure</string>
+    <string name="AA_label_type">Which figure?</string>
+    <string name="AA_label_dimension">Enter linear dimension</string>
+    <string name="AA_square">Square</string>
+    <string name="AA_triangle">Equilateral Triangle</string>
+    <string name="AA_circle">Circle</string>
+    <string name="MA_appname">Figure Calculator</string>
+    <string name="confirm">Confirm</string>
+</resources>

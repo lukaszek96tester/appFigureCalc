@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TextView_Hello"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="191dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="8dp"
+            app:srcCompat="@drawable/figure_calc_logo" />
+
+        <TextView
+            android:id="@+id/MA_textView_appname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/MA_appname"
+            android:textColor="@color/accent_material_dark_1"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:fontFamily="monospace"
+            android:gravity="center_vertical"
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/MA_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goToDisplayActivity"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/MA_button_display" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goToAddActivity"
+            android:text="@string/MA_button_add" />
+
+    </LinearLayout>
+</FrameLayout>
