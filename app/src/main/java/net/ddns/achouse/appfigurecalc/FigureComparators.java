@@ -27,8 +27,8 @@ public class FigureComparators {
     private static class FigureSymbolComparator implements Comparator<String[]> {
 
         @Override
-        public int compare(final String car1[], final String car2[]) {
-            return car1[0].compareTo(car2[0]);
+        public int compare(final String figure1[], final String figure2[]) {
+            return figure1[0].compareTo(figure2[0]);
         }
     }
 
@@ -37,11 +37,11 @@ public class FigureComparators {
 
 
         @Override
-        public int compare(final String car1[], final String car2[]) {
-            double car1D = Double.parseDouble(car1[1]);
-            double car2D = Double.parseDouble(car2[1]);
-            if (car1D < car2D) return -1;
-            if (car1D > car2D) return 1;
+        public int compare(final String figure1[], final String figure2[]) {
+            double figure1D = Double.parseDouble(figure1[1]);
+            double figure2D = Double.parseDouble(figure2[1]);
+            if (figure1D < figure2D) return -1;
+            if (figure1D > figure2D) return 1;
             return 0;
         }
     }
@@ -50,11 +50,11 @@ public class FigureComparators {
     private static class FigureAreaComparator implements Comparator<String[]> {
 
         @Override
-        public int compare(final String car1[], final String car2[]) {
-            double car1D = Double.parseDouble(car1[2]);
-            double car2D = Double.parseDouble(car2[2]);
-            if (car1D < car2D) return -1;
-            if (car1D > car2D) return 1;
+        public int compare(final String figure1[], final String figure2[]) {
+            double figure1D = Double.parseDouble(figure1[2]);
+            double figure2D = Double.parseDouble(figure2[2]);
+            if (figure1D < figure2D) return -1;
+            if (figure1D > figure2D) return 1;
             return 0;
         }
     }
@@ -63,11 +63,11 @@ public class FigureComparators {
     private static class FigurePerimeterComparator implements Comparator<String[]> {
 
         @Override
-        public int compare(final String car1[], final String car2[]) {
-            double car1D = Double.parseDouble(car1[3]);
-            double car2D = Double.parseDouble(car2[3]);
-            if (car1D < car2D) return -1;
-            if (car1D > car2D) return 1;
+        public int compare(final String figure1[], final String figure2[]) {
+            double figure1D = Double.parseDouble(figure1[3]);
+            double figure2D = Double.parseDouble(figure2[3]);
+            if (figure1D < figure2D) return -1;
+            if (figure1D > figure2D) return 1;
             return 0;
         }
     }

@@ -4,21 +4,14 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 
 import de.codecrafters.tableview.SortableTableView;
-import de.codecrafters.tableview.TableView;
 import de.codecrafters.tableview.model.TableColumnWeightModel;
 import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
 import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
 import de.codecrafters.tableview.toolkit.TableDataRowBackgroundProviders;
 
-import android.graphics.Color;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.widget.TextView;
-
-import java.util.Comparator;
-import java.util.function.ToDoubleFunction;
 
 public class DisplayActivity extends AppCompatActivity {
     // Tablica z nagłówkami do tabeli
@@ -61,7 +54,7 @@ public class DisplayActivity extends AppCompatActivity {
         tb.setColumnComparator(3, FigureComparators.getFigurePerimeterComparator());
 
         //wyświetlenie statystyk czyli ilości figur
-        TextView text1 = (TextView) findViewById(R.id.textView2);
+        TextView text1 = (TextView) findViewById(R.id.AD_textView_liczbaFigur);
         text1.setText((String) bundle.getSerializable("figuresDataLength"));
 
         TextView text2 = (TextView) findViewById(R.id.textView4);

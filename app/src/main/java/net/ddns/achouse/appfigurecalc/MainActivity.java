@@ -8,6 +8,7 @@ import android.view.View;
 
 import java.util.ArrayList;
 import java.text.*;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,42 @@ public class MainActivity extends AppCompatActivity {
         {
             //tutaj jest przechowywana lista figur jest zapisywana w metodzie onSaveInstanceSave
             listFigures = savedInstanceState.getParcelableArrayList("listFigures");
+        } else {
+            Random generator = new Random();
+            int numberOfFigures = 6;
+            int type;
+            float linearDimension;
+            // wypelnianie tablicy  referencjami do wygenerowanych obiektow figur (typee figury okresla wczesniej wylosowana liczba)
+            for (int i = 0; i < numberOfFigures; i++)
+            {
+                // określanie typeu figury oraz wymiaru liniowego
+                type = generator.nextInt(3);
+                linearDimension = generator.nextFloat();
+                switch(type)
+                {
+                    case 0:
+                    {
+                        listFigures.add(new Square(linearDimension));
+                    }
+                    break;
+                    case 1:
+                    {
+                        listFigures.add(new Circle(linearDimension));
+                    }
+                    break;
+                    case 2:
+                    {
+                        listFigures.add(new EquilateralTriangle(linearDimension));
+                    }
+                }
+            }
+
+            // Policz pola i obwody
+            for (int j = 0; j < numberOfFigures; j++)
+            {
+                listFigures.get(j).calculatePerimeter();
+                listFigures.get(j).calculateArea();
+            }
         }
     }
 
