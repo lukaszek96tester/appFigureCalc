@@ -6,10 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".DisplayActivity">
 
-    <de.codecrafters.tableview.SortableTableView
-        xmlns:table="http://schemas.android.com/apk/res-auto"
+    <de.codecrafters.tableview.SortableTableView xmlns:table="http://schemas.android.com/apk/res-auto"
         android:id="@+id/tableView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        table:tableView_columnCount="4" />
+        android:layout_height="519dp"
+        table:tableView_columnCount="4"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="47dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of figures"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="0dp" />
+
 </android.support.constraint.ConstraintLayout>

@@ -65,7 +65,7 @@ public class FigureComparators {
         @Override
         public int compare(final String car1[], final String car2[]) {
             double car1D = Double.parseDouble(car1[3]);
-            double car2D = Double.parseDouble(car2[4]);
+            double car2D = Double.parseDouble(car2[3]);
             if (car1D < car2D) return -1;
             if (car1D > car2D) return 1;
             return 0;

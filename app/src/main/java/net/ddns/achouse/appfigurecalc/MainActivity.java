@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.text.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,9 +59,16 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
-            figuresData[rows][1] = Double.toString(listFigures.get(rows).getLinearDimension());
-            figuresData[rows][2] = Double.toString(listFigures.get(rows).getArea());
-            figuresData[rows][3] = Double.toString(listFigures.get(rows).getPerimeter());
+            //figuresData[rows][1] = Double.toString(listFigures.get(rows).getLinearDimension());
+            //figuresData[rows][2] = Double.toString(listFigures.get(rows).getArea());
+            //figuresData[rows][3] = Double.toString(listFigures.get(rows).getPerimeter());
+
+            //FORMATOWANIE - OBCIECIE DO TRZECH MIEJSC PO PRZECINKU
+            DecimalFormat df = new DecimalFormat("#.###");
+
+            figuresData[rows][1] = df.format(listFigures.get(rows).getLinearDimension());
+            figuresData[rows][2] = df.format(listFigures.get(rows).getArea());
+            figuresData[rows][3] = df.format(listFigures.get(rows).getPerimeter());
         }
         bundle.putSerializable("figuresData", figuresData);
         intent.putExtras(bundle);

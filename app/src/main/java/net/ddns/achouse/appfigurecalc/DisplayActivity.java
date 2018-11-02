@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 
 import de.codecrafters.tableview.SortableTableView;
 import de.codecrafters.tableview.TableView;
@@ -14,6 +15,7 @@ import de.codecrafters.tableview.toolkit.TableDataRowBackgroundProviders;
 
 import android.graphics.Color;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.widget.TextView;
 
 import java.util.Comparator;
 import java.util.function.ToDoubleFunction;
@@ -33,13 +35,8 @@ public class DisplayActivity extends AppCompatActivity {
         Bundle bundle = passed.getExtras();
         String[][] tableFigures = (String[][]) bundle.getSerializable("figuresData");
 
-
-
-
         final SortableTableView<String[]> tb = (SortableTableView<String[]>) findViewById(R.id.tableView);
         tb.setColumnCount(4);
-
-
 
         TableColumnWeightModel columnModel = new TableColumnWeightModel(4);
         columnModel.setColumnWeight(0, 1);
@@ -48,11 +45,10 @@ public class DisplayActivity extends AppCompatActivity {
         columnModel.setColumnWeight(3, 2);
         tb.setColumnModel(columnModel);
 
-
-//                            //ROW STYLE
-//                            int colorEvenRows = getResources().getColor(R.color.colorPrimary);
-//                            int colorOddRows = getResources().getColor(R.color.accent_material_dark_1);
-//                            tb.setDataRowBackgroundProvider(TableDataRowBackgroundProviders.alternatingRowColors(colorEvenRows, colorOddRows));
+        //ROW STYLE
+        int colorEvenRows = getResources().getColor(R.color.colorPrimary);
+        int colorOddRows = getResources().getColor(R.color.accent_material_dark_1);
+        tb.setDataRowBackgroundProvider(TableDataRowBackgroundProviders.alternatingRowColors(colorEvenRows, colorOddRows));
 
         //ADAPTERS
         tb.setHeaderAdapter(new SimpleTableHeaderAdapter(this,tableHeaders));
@@ -63,30 +59,9 @@ public class DisplayActivity extends AppCompatActivity {
         tb.setColumnComparator(1, FigureComparators.getFigureLinearDimensionComparator());
         tb.setColumnComparator(2, FigureComparators.getFigureAreaComparator());
         tb.setColumnComparator(3, FigureComparators.getFigurePerimeterComparator());
-        //COLUMN WEIGHT
+
+        //wyświetlenie statystyk czyli ilości figur
+        TextView text1 = (TextView) findViewById(R.id.textView2);
+        text1.setText('5');
     }
-
-    // do sortowania - nie działa
-//    public static class elo implements Comparator<String> {
-//        @Override
-//        public int compare(final String value1, final String value2) {
-////            if(Double.parseDouble(value1) < Double.parseDouble(value2)) return -1;
-////            if(Double.parseDouble(value1) > Double.parseDouble(value2)) return 1;
-////            return 0;
-//            return value1.compareTo(value2);
-//        }
-//
-//
-////        public static Comparator<String> getCarProducerComparator() {
-////            return new CarProducerComparator();
-////        }
-////        public static Comparator<String> getStringFigureComparator() {
-////            return new FigureComparator();
-////        }
-//    }
-
-
-//        public Comparator<String> thenComparingDouble(ToDoubleFunction<? super String> keyExtractor) {
-//            return null;
-//        }
 }
