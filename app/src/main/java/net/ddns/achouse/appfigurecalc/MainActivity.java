@@ -83,6 +83,20 @@ public class MainActivity extends AppCompatActivity {
         return averageArea;
     }
 
+    protected double calculateAveragePerimeter() {
+
+        double averagePerimeter = 0;
+        double sum = 0;
+
+        for (int rows = 0; rows < listFigures.size(); rows++ ) {
+            sum = sum + listFigures.get(rows).getPerimeter();
+        }
+
+        averagePerimeter = sum / listFigures.size();
+
+        return averagePerimeter;
+    }
+
     public void goToAddActivity(View v) {
         Intent Intent = new Intent(getBaseContext(),AddActivity.class);
         // Start AddActivity waiting for result
@@ -121,9 +135,11 @@ public class MainActivity extends AppCompatActivity {
             figuresData[rows][2] = df.format(listFigures.get(rows).getArea());
             figuresData[rows][3] = df.format(listFigures.get(rows).getPerimeter());
         }
+
         bundle.putSerializable("figuresData", figuresData);
         bundle.putSerializable("figuresDataLength", Integer.toString(numberOfFigures));
         bundle.putSerializable("figuresDataAverageArea", Double.toString(calculateAverageArea()));
+        bundle.putSerializable("figuresDataAveragePerimeter", Double.toString(calculateAveragePerimeter()));
         intent.putExtras(bundle);
         startActivity(intent);
     }

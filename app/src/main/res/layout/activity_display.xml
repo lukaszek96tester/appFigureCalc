@@ -10,9 +10,10 @@
         android:id="@+id/tableView"
         android:layout_width="wrap_content"
         android:layout_height="496dp"
+        android:layout_marginTop="70dp"
+        table:layout_constraintTop_toTopOf="parent"
         table:tableView_columnCount="4"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="76dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/AD_textView_label_liczbaFigur"
@@ -40,18 +41,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/AD_textView_label_Sumarized"
+        android:id="@+id/AD_textView_label_Average"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Sumarized"
+        android:text="Average"
         app:layout_constraintBottom_toTopOf="@+id/tableView"
-        app:layout_constraintEnd_toStartOf="@+id/AD_textView_Area"
-        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AD_textView_label_liczbaFigur"
         app:layout_constraintVertical_bias="0.0" />
@@ -60,24 +57,24 @@
         android:id="@+id/AD_textView_Area"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginBottom="8dp"
         android:text="Area"
         app:layout_constraintBottom_toTopOf="@+id/tableView"
+        app:layout_constraintStart_toEndOf="@+id/AD_textView_label_Average"
         app:layout_constraintTop_toBottomOf="@+id/AD_textView_liczbaFigur"
-        app:layout_constraintVertical_bias="0.571"
-        tools:layout_editor_absoluteX="161dp" />
+        app:layout_constraintVertical_bias="0.875" />
 
     <TextView
         android:id="@+id/AD_textView_Perimeter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
         android:text="Perimeter"
-        app:layout_constraintBottom_toTopOf="@+id/tableView"
         app:layout_constraintStart_toEndOf="@+id/AD_textView_Area"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955" />
+        app:layout_constraintTop_toBottomOf="@+id/AD_textView_liczbaFigur" />
 
 </android.support.constraint.ConstraintLayout>
