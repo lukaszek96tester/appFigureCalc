@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ac/AndroidStudioProjects/appFigureCalculator/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v25/values-v25.xml",
+            "outputFile": "D:\\politechnika\\VII semestr\\Android\\Laboratorium\\Projekt github\\appFigureCalc\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
             "map": [
                 {
-                    "source": "/home/ac/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/13eabd9abfac3aad9bdacd22d4778527/res/values-v25/values-v25.xml",
+                    "source": "C:\\Users\\Lukasz\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\fd345b8162813bad3ac51b18dd30dfdf\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

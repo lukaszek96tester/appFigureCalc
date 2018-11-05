@@ -1,4 +1,4 @@
-#Fri Nov 02 22:47:58 CET 2018
-base.0=/home/ac/AndroidStudioProjects/appFigureCalculator/app/build/intermediates/transforms/dexMerger/debug/0
+#Mon Nov 05 23:25:06 CET 2018
+base.0=D\:\\politechnika\\VII semestr\\Android\\Laboratorium\\Projekt github\\appFigureCalc\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -54,13 +54,13 @@ public class DisplayActivity extends AppCompatActivity {
         tb.setColumnComparator(3, FigureComparators.getFigurePerimeterComparator());
 
         //wyświetlenie statystyk
-        TextView text1 = (TextView) findViewById(R.id.AD_textView_liczbaFigur);
-        text1.setText((String) bundle.getSerializable("figuresDataLength"));
-
-        TextView text2 = (TextView) findViewById(R.id.AD_textView_Area);
-        text2.setText("Area " + (String) bundle.getSerializable("figuresDataAverageArea"));
-
-        TextView text3 = (TextView) findViewById(R.id.AD_textView_Perimeter);
-        text3.setText("Perimeter " + (String) bundle.getSerializable("figuresDataAveragePerimeter"));
+//        TextView text1 = (TextView) findViewById(R.id.AD_textView_liczbaFigur);
+//        text1.setText((String) bundle.getSerializable("figuresDataLength"));
+//
+//        TextView text2 = (TextView) findViewById(R.id.AD_textView_Area);
+//        text2.setText("Area " + (String) bundle.getSerializable("figuresDataAverageArea"));
+//
+//        TextView text3 = (TextView) findViewById(R.id.AD_textView_Perimeter);
+//        text3.setText("Perimeter " + (String) bundle.getSerializable("figuresDataAveragePerimeter"));
     }
 }

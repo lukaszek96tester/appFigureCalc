@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -69,30 +70,48 @@ public class MainActivity extends AppCompatActivity {
         outState.putParcelableArrayList("listFigures", listFigures);
     }
 
-    protected double calculateAverageArea() {
+    protected int calculateNumberOfFigures(String figureType) {
+        int sum = 0;
+
+        for (int rows = 0; rows < listFigures.size(); rows++ ) {
+            if(listFigures.get(rows).getType() == figureType) {
+                sum++;
+            }
+        }
+
+        return sum;
+    }
+
+    protected double calculateAverageArea(String figureType) {
 
         double averageArea = 0;
         double sum = 0;
 
         for (int rows = 0; rows < listFigures.size(); rows++ ) {
-            sum = sum + listFigures.get(rows).getArea();
+            if(listFigures.get(rows).getType() == figureType) {
+                sum = sum + listFigures.get(rows).getArea();
+            }
         }
-
-        averageArea = sum / listFigures.size();
+        if(calculateNumberOfFigures(figureType) != 0) {
+            averageArea = sum / calculateNumberOfFigures(figureType);
+        }
 
         return averageArea;
     }
 
-    protected double calculateAveragePerimeter() {
+    protected double calculateAveragePerimeter(String figureType) {
 
         double averagePerimeter = 0;
         double sum = 0;
 
         for (int rows = 0; rows < listFigures.size(); rows++ ) {
-            sum = sum + listFigures.get(rows).getPerimeter();
+            if(listFigures.get(rows).getType() == figureType) {
+                sum = sum + listFigures.get(rows).getPerimeter();
+            }
         }
-
-        averagePerimeter = sum / listFigures.size();
+        if(calculateNumberOfFigures(figureType) != 0) {
+            averagePerimeter = sum / calculateNumberOfFigures(figureType);
+        }
 
         return averagePerimeter;
     }
@@ -138,13 +157,50 @@ public class MainActivity extends AppCompatActivity {
 
         bundle.putSerializable("figuresData", figuresData);
         bundle.putSerializable("figuresDataLength", Integer.toString(numberOfFigures));
-        bundle.putSerializable("figuresDataAverageArea", Double.toString(calculateAverageArea()));
-        bundle.putSerializable("figuresDataAveragePerimeter", Double.toString(calculateAveragePerimeter()));
+        bundle.putSerializable("figuresDataAverageArea", Double.toString(calculateAverageArea("Square")));
+        bundle.putSerializable("figuresDataAveragePerimeter", Double.toString(calculateAveragePerimeter("Square")));
         intent.putExtras(bundle);
         startActivity(intent);
     }
 
+    public void goToDisplayStatsActivity(View v) {
+        Intent intent = new Intent(this, DisplayStatsActivity.class);
+        Bundle bundle = new Bundle();
+        String type = "";
+        int numberOfFigures = listFigures.size();
+        String [][] figuresStatsData = new String[3][4];
 
+        String [] figuresTypes = {"Square", "Circle", "Equilateral Triangle"};
+
+        for(int i = 0; i < figuresTypes.length; i++) {
+            type = figuresTypes[i];
+            switch(type) {
+                case "Square":
+                    figuresStatsData[i][0] = "■";
+                    break;
+                case "Equilateral Triangle":
+                    figuresStatsData[i][0] = "▲";
+                    break;
+                case "Circle":
+                    figuresStatsData[i][0] = "●";
+                    break;
+            };
+            figuresStatsData[i][1] = Integer.toString(calculateNumberOfFigures(type));
+            figuresStatsData[i][2] = Double.toString(calculateAverageArea(type));
+            figuresStatsData[i][3] = Double.toString(calculateAveragePerimeter(type));
+        }
+
+        //figuresStatsData[0][0] = "■";
+        //figuresStatsData[0][1] = Integer.toString(calculateNumberOfFigures("Square"));
+        //figuresStatsData[0][2] = Double.toString(calculateAverageArea("Square"));
+        //figuresStatsData[0][3] = Double.toString(calculateAveragePerimeter("Square"));
+
+
+        bundle.putSerializable("figuresStatsData", figuresStatsData);
+
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         //odczytywanie zwróconcyh danych z aktywności wywołanych

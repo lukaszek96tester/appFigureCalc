@@ -828,6 +828,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_margin
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -1034,15 +1035,11 @@ id AA_radioB_square
 id AA_radioB_triangle
 id AA_textView_Type
 id AA_textView_dimension
-id AD_textView_Area
-id AD_textView_Perimeter
-id AD_textView_label_Average
-id AD_textView_label_liczbaFigur
-id AD_textView_liczbaFigur
 id ALT
 id CTRL
 id FUNCTION
 id MA_button
+id MA_button_display_stats
 id MA_textView_appname
 id META
 id SHIFT
@@ -1071,6 +1068,7 @@ id add
 id alertTitle
 id all
 id always
+id asd
 id async
 id auto
 id barrier
@@ -1297,7 +1295,9 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add
 layout activity_display
+layout activity_display_stats
 layout activity_main
+layout content_display_stats
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1404,6 +1404,7 @@ string search_menu_title
 string sortable_indicator_content_description
 string status_bar_notification_info_overflow
 string text_second_page
+string title_activity_display_stats
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1603,6 +1604,8 @@ style CardView
 style CardView_Dark
 style CardView_Light
 style GreenDarky
+style GreenDarky_AppBarOverlay
+style GreenDarky_PopupOverlay
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents

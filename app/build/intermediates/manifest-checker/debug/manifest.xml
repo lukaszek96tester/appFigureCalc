@@ -27,6 +27,10 @@
         </activity>
         <activity android:name="net.ddns.achouse.appfigurecalc.AddActivity" />
         <activity android:name="net.ddns.achouse.appfigurecalc.DisplayActivity" />
+        <activity
+            android:name="net.ddns.achouse.appfigurecalc.DisplayStatsActivity"
+            android:label="@string/title_activity_display_stats"
+            android:theme="@style/GreenDarky" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
