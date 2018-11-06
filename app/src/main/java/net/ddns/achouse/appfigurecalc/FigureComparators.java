@@ -32,9 +32,7 @@ public class FigureComparators {
         }
     }
 
-
     private static class FigureLinearDimensionComparator implements Comparator<String[]> {
-
 
         @Override
         public int compare(final String figure1[], final String figure2[]) {
@@ -45,7 +43,6 @@ public class FigureComparators {
             return 0;
         }
     }
-
 
     private static class FigureAreaComparator implements Comparator<String[]> {
 
@@ -60,7 +57,7 @@ public class FigureComparators {
     }
 
 
-    private static class FigurePerimeterComparator implements Comparator<String[]> {
+    protected static class FigurePerimeterComparator implements Comparator<String[]> {
 
         @Override
         public int compare(final String figure1[], final String figure2[]) {

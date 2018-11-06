@@ -9,11 +9,13 @@
     <de.codecrafters.tableview.SortableTableView xmlns:table="http://schemas.android.com/apk/res-auto"
         android:id="@+id/tableView"
         android:layout_width="wrap_content"
-        android:layout_height="496dp"
+        android:layout_height="551dp"
 
+        table:layout_constraintBottom_toBottomOf="parent"
+        table:layout_constraintEnd_toEndOf="parent"
+        table:layout_constraintStart_toStartOf="parent"
         table:layout_constraintTop_toTopOf="parent"
-        table:tableView_columnCount="4"
-        tools:layout_editor_absoluteX="0dp" />
+        table:tableView_columnCount="4" />
 
     <!--<TextView-->
         <!--android:id="@+id/AD_textView_label_liczbaFigur"-->
