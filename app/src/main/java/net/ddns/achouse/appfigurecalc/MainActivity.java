@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -143,10 +142,6 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
-            //figuresData[rows][1] = Double.toString(listFigures.get(rows).getLinearDimension());
-            //figuresData[rows][2] = Double.toString(listFigures.get(rows).getArea());
-            //figuresData[rows][3] = Double.toString(listFigures.get(rows).getPerimeter());
-
             //FORMATOWANIE - OBCIECIE DO TRZECH MIEJSC PO PRZECINKU
             DecimalFormat df = new DecimalFormat("#.###");
 
@@ -156,9 +151,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         bundle.putSerializable("figuresData", figuresData);
-        bundle.putSerializable("figuresDataLength", Integer.toString(numberOfFigures));
-        bundle.putSerializable("figuresDataAverageArea", Double.toString(calculateAverageArea("Square")));
-        bundle.putSerializable("figuresDataAveragePerimeter", Double.toString(calculateAveragePerimeter("Square")));
         intent.putExtras(bundle);
         startActivity(intent);
     }
@@ -167,7 +159,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplayStatsActivity.class);
         Bundle bundle = new Bundle();
         String type = "";
-        int numberOfFigures = listFigures.size();
         String [][] figuresStatsData = new String[3][4];
 
         String [] figuresTypes = {"Square", "Circle", "Equilateral Triangle"};
@@ -185,19 +176,17 @@ public class MainActivity extends AppCompatActivity {
                     figuresStatsData[i][0] = "●";
                     break;
             };
-            figuresStatsData[i][1] = Integer.toString(calculateNumberOfFigures(type));
-            figuresStatsData[i][2] = Double.toString(calculateAverageArea(type));
-            figuresStatsData[i][3] = Double.toString(calculateAveragePerimeter(type));
+
+
+            //FORMATOWANIE - OBCIECIE DO TRZECH MIEJSC PO PRZECINKU
+            DecimalFormat df = new DecimalFormat("#.###");
+
+            figuresStatsData[i][1] = df.format(calculateNumberOfFigures(type));
+            figuresStatsData[i][2] = df.format(calculateAverageArea(type));
+            figuresStatsData[i][3] = df.format(calculateAveragePerimeter(type));
         }
 
-        //figuresStatsData[0][0] = "■";
-        //figuresStatsData[0][1] = Integer.toString(calculateNumberOfFigures("Square"));
-        //figuresStatsData[0][2] = Double.toString(calculateAverageArea("Square"));
-        //figuresStatsData[0][3] = Double.toString(calculateAveragePerimeter("Square"));
-
-
         bundle.putSerializable("figuresStatsData", figuresStatsData);
-
         intent.putExtras(bundle);
         startActivity(intent);
     }

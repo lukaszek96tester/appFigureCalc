@@ -11,8 +11,6 @@ import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
 import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
 import de.codecrafters.tableview.toolkit.TableDataRowBackgroundProviders;
 
-import android.widget.TextView;
-
 public class DisplayActivity extends AppCompatActivity {
     // Tablica z nagłówkami do tabeli
     String[] tableHeaders = {"Type", "Linear Dimension" , "Area" , "Perimeter"};
@@ -21,7 +19,6 @@ public class DisplayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         //pobieranie intencji czyli tych informacji lub opisu czynności pomiędzy aktywościami
         Intent passed = getIntent();
@@ -52,15 +49,5 @@ public class DisplayActivity extends AppCompatActivity {
         tb.setColumnComparator(1, FigureComparators.getFigureLinearDimensionComparator());
         tb.setColumnComparator(2, FigureComparators.getFigureAreaComparator());
         tb.setColumnComparator(3, FigureComparators.getFigurePerimeterComparator());
-
-        //wyświetlenie statystyk
-//        TextView text1 = (TextView) findViewById(R.id.AD_textView_liczbaFigur);
-//        text1.setText((String) bundle.getSerializable("figuresDataLength"));
-//
-//        TextView text2 = (TextView) findViewById(R.id.AD_textView_Area);
-//        text2.setText("Area " + (String) bundle.getSerializable("figuresDataAverageArea"));
-//
-//        TextView text3 = (TextView) findViewById(R.id.AD_textView_Perimeter);
-//        text3.setText("Perimeter " + (String) bundle.getSerializable("figuresDataAveragePerimeter"));
     }
 }

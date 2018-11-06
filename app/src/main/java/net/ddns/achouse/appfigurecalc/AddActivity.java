@@ -17,8 +17,6 @@ public class AddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add);
     }
 
-
-
     public void onButtonClicked(View v) {
         //znajdywanie pola tekstowaego na wpisywanie rozmiaru
         EditText editText_dimension = (EditText) findViewById(R.id.AA_editText_dimension);

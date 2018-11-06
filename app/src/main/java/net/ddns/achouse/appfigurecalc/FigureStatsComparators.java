@@ -36,7 +36,11 @@ public class FigureStatsComparators {
 
         @Override
         public int compare(final String figureNumber1[], final String figureNumber2[]) {
-            return figureNumber1[1].compareTo(figureNumber2[1]);
+            double figure1D = Double.parseDouble(figureNumber1[1]);
+            double figure2D = Double.parseDouble(figureNumber2[1]);
+            if (figure1D < figure2D) return -1;
+            if (figure1D > figure2D) return 1;
+            return 0;
         }
     }
 
@@ -44,7 +48,11 @@ public class FigureStatsComparators {
 
         @Override
         public int compare(final String figureAverageArea1[], final String figureAverageArea2[]) {
-            return figureAverageArea1[2].compareTo(figureAverageArea2[2]);
+            double figure1D = Double.parseDouble(figureAverageArea1[2]);
+            double figure2D = Double.parseDouble(figureAverageArea2[2]);
+            if (figure1D < figure2D) return -1;
+            if (figure1D > figure2D) return 1;
+            return 0;
         }
     }
 
@@ -52,7 +60,11 @@ public class FigureStatsComparators {
 
         @Override
         public int compare(final String figureAveragePerimeter1[], final String figureAveragePerimeter2[]) {
-            return figureAveragePerimeter1[3].compareTo(figureAveragePerimeter2[3]);
+            double figure1D = Double.parseDouble(figureAveragePerimeter1[3]);
+            double figure2D = Double.parseDouble(figureAveragePerimeter2[3]);
+            if (figure1D < figure2D) return -1;
+            if (figure1D > figure2D) return 1;
+            return 0;
         }
     }
 }
