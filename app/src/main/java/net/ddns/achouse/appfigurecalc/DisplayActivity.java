@@ -21,7 +21,6 @@ public class DisplayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         //pobieranie intencji czyli tych informacji lub opisu czynności pomiędzy aktywościami
         Intent passed = getIntent();
