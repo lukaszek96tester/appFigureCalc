@@ -7,55 +7,61 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="345dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="8dp"
-            app:srcCompat="@drawable/figure_calc_logo" />
-
-        <TextView
-            android:id="@+id/MA_textView_appname"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/MA_appname"
-            android:textColor="@color/accent_material_dark_1"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:fontFamily="monospace"
-            android:gravity="center_vertical"
-            android:textAlignment="center"/>
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/MA_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="goToDisplayActivity"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:text="@string/MA_button_display" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="goToAddActivity"
-            android:text="@string/MA_button_add" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="345dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="8dp"
+                app:srcCompat="@drawable/figure_calc_logo" />
 
-        <Button
-            android:id="@+id/MA_button_display_stats"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="goToDisplayStatsActivity"
-            android:text="Display statistics" />
+            <TextView
+                android:id="@+id/MA_textView_appname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/MA_appname"
+                android:textAlignment="center"
+                android:textColor="@color/accent_material_dark_1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="monospace" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/MA_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToDisplayActivity"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/MA_button_display" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToAddActivity"
+                android:text="@string/MA_button_add" />
+
+            <Button
+                android:id="@+id/MA_button_display_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToDisplayStatsActivity"
+                android:text="Display statistics" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </FrameLayout>

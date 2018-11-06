@@ -18,18 +18,25 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/GreenDarky" >
-        <activity android:name="net.ddns.achouse.appfigurecalc.MainActivity" >
+        <activity
+            android:name="net.ddns.achouse.appfigurecalc.MainActivity"
+            android:screenOrientation="sensor" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="net.ddns.achouse.appfigurecalc.AddActivity" />
-        <activity android:name="net.ddns.achouse.appfigurecalc.DisplayActivity" />
+        <activity
+            android:name="net.ddns.achouse.appfigurecalc.AddActivity"
+            android:screenOrientation="sensor" />
+        <activity
+            android:name="net.ddns.achouse.appfigurecalc.DisplayActivity"
+            android:screenOrientation="sensor" />
         <activity
             android:name="net.ddns.achouse.appfigurecalc.DisplayStatsActivity"
             android:label="@string/title_activity_display_stats"
+            android:screenOrientation="sensor"
             android:theme="@style/GreenDarky" />
 
         <provider

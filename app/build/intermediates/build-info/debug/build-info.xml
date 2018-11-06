@@ -2,43 +2,79 @@
 <instant-run
     abi="x86"
     api-level="28"
-    build-mode="HOT_WARM"
-    density="hdpi"
+    build-mode="FULL"
+    density="420dpi"
     format="10"
     plugin-version="3.2.1"
-    timestamp="1541497667331"
+    timestamp="1541531888856"
     token="-5178448849081488869"
-    verifier="COMPATIBLE" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="1063" />
+        duration="0" />
     <task
         name="instant-run-dex"
-        duration="236" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="523" />
+        duration="0" />
     <task
         name="verifier"
-        duration="74" />
+        duration="0" />
 
     <artifact
-        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1541495889769"
+        timestamp="1541531888856"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            type="SPLIT" />
         <artifact
             location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
             location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -70,30 +106,6 @@
         <artifact
             location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1541496539985"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\builds\debug\1541496539985\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1541497453184"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\builds\debug\1541497453184\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1541497667331"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>
