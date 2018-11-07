@@ -217,13 +217,13 @@ public class MainActivity extends AppCompatActivity {
             type = figuresTypes[i];
             switch(type) {
                 case "Square":
-                    figuresStatsData[i][0] = " ■";
+                    figuresStatsData[i][0] = "■";
                     break;
                 case "Equilateral Triangle":
                     figuresStatsData[i][0] = "▲";
                     break;
                 case "Circle":
-                    figuresStatsData[i][0] = " ●";
+                    figuresStatsData[i][0] = "●";
                     break;
             };
 
