@@ -48,7 +48,7 @@
                 android:text="@string/MA_button_display" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/MA_button_new"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="goToAddActivity"
@@ -60,6 +60,13 @@
                 android:layout_height="wrap_content"
                 android:onClick="goToDisplayStatsActivity"
                 android:text="Display statistics" />
+
+            <Button
+                android:id="@+id/MA_button_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToSettingsActivity"
+                android:text="SETTINGS" />
 
         </LinearLayout>
     </ScrollView>

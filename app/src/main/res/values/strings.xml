@@ -14,4 +14,5 @@
     <string name="MA_appname">Figure Calculator</string>
     <string name="confirm">Confirm</string>
     <string name="title_activity_display_stats">DisplayStatsActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 </resources>

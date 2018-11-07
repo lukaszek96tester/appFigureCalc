@@ -13,7 +13,9 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Figure> listFigures = new ArrayList<Figure>();
-
+    int min;
+    int max;
+    int numberOfFigures;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,8 +26,12 @@ public class MainActivity extends AppCompatActivity {
             //tutaj jest przechowywana lista figur jest zapisywana w metodzie onSaveInstanceSave
             listFigures = savedInstanceState.getParcelableArrayList("listFigures");
         } else {
-            Random generator = new Random();
-            int numberOfFigures = 6;
+            min = -5;
+            max = 5;
+            numberOfFigures = 6;
+            generateFigures();
+            /*Random generator = new Random();
+
             int type;
             float linearDimension;
             // wypelnianie tablicy  referencjami do wygenerowanych obiektow figur (typee figury okresla wczesniej wylosowana liczba)
@@ -33,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 // określanie typeu figury oraz wymiaru liniowego
                 type = generator.nextInt(3);
-                linearDimension = generator.nextFloat();
+                linearDimension = min + generator.nextFloat() * (max - min);
                 switch(type)
                 {
                     case 0:
@@ -58,7 +64,45 @@ public class MainActivity extends AppCompatActivity {
             {
                 listFigures.get(j).calculatePerimeter();
                 listFigures.get(j).calculateArea();
+            }*/
+        }
+    }
+
+    void generateFigures(){
+        Random generator = new Random();
+
+        int type;
+        float linearDimension;
+        // wypelnianie tablicy  referencjami do wygenerowanych obiektow figur (typee figury okresla wczesniej wylosowana liczba)
+        for (int i = 0; i < numberOfFigures; i++)
+        {
+            // określanie typeu figury oraz wymiaru liniowego
+            type = generator.nextInt(3);
+            linearDimension = min + generator.nextFloat() * (max - min);
+            switch(type)
+            {
+                case 0:
+                {
+                    listFigures.add(new Square(linearDimension));
+                }
+                break;
+                case 1:
+                {
+                    listFigures.add(new Circle(linearDimension));
+                }
+                break;
+                case 2:
+                {
+                    listFigures.add(new EquilateralTriangle(linearDimension));
+                }
             }
+        }
+
+        // Policz pola i obwody
+        for (int j = 0; j < numberOfFigures; j++)
+        {
+            listFigures.get(j).calculatePerimeter();
+            listFigures.get(j).calculateArea();
         }
     }
 
@@ -121,6 +165,12 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(Intent, 1);
     }
 
+    public void goToSettingsActivity(View v) {
+        Intent Intent = new Intent(getBaseContext(),SettingsActivity.class);
+        // Start AddActivity waiting for result
+        startActivityForResult(Intent, 2);
+    }
+
     public void goToDisplayActivity(View v) {
         Intent intent = new Intent(this, DisplayActivity.class);
         Bundle bundle = new Bundle();
@@ -167,13 +217,13 @@ public class MainActivity extends AppCompatActivity {
             type = figuresTypes[i];
             switch(type) {
                 case "Square":
-                    figuresStatsData[i][0] = "■";
+                    figuresStatsData[i][0] = " ■";
                     break;
                 case "Equilateral Triangle":
                     figuresStatsData[i][0] = "▲";
                     break;
                 case "Circle":
-                    figuresStatsData[i][0] = "●";
+                    figuresStatsData[i][0] = " ●";
                     break;
             };
 
@@ -233,6 +283,23 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("Type: " + typ);// wyswietlenie sformatowanego wiersza w terminalu
                         System.out.println("\t Linear Dimension: " + listFigures.get(nr).getLinearDimension() + "\t Area: " + listFigures.get(nr).getArea() + "\t Perimeter: " + listFigures.get(nr).getPerimeter());
                     }
+                }
+            }
+            else {
+                return;
+            }
+        }
+        if (requestCode == 2) {
+            if (resultCode == RESULT_OK && null!=data) {
+                String resultNumberOfFigures = data.getStringExtra("numberOfFigures");
+                String resultMin = data.getStringExtra("min");
+                String resultMax = data.getStringExtra("max");
+                if (!TextUtils.isEmpty(resultNumberOfFigures) && !TextUtils.isEmpty(resultMin) && !TextUtils.isEmpty(resultMax)) {
+                    numberOfFigures = Integer.parseInt(resultNumberOfFigures);
+                    min = Integer.parseInt(resultMin);
+                    max = Integer.parseInt(resultMax);
+                    listFigures.clear();
+                    generateFigures();
                 }
             }
             else {
