@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-28:12
+ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-37:12
 MERGED from [de.codecrafters.tableview:tableview:2.8.0] C:\Users\Lukasz\.gradle\caches\transforms-1\files-1.1\tableview-2.8.0.aar\3249ba63988af19f13d08e1d627a2523\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\Lukasz\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\87d20e243e1eda5bbe954b22d9366048\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Lukasz\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\fd345b8162813bad3ac51b18dd30dfdf\AndroidManifest.xml:17:1-22:12
@@ -36,25 +36,25 @@ MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Lukasz
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Lukasz\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\8d38bd081ded643e04b0b152d4f990d2\AndroidManifest.xml:17:1-24:12
 MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Lukasz\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\430ac4a292add2d9b58d79b0eefeadd2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Lukasz\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\f0e02bd94e55b521d43a77c5b2d16b68\AndroidManifest.xml:17:1-25:12
-INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
 		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:3:5-45
 		INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml
 		INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-28:12
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-28:12
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:5:5-26:19
+ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:5:5-35:19
 MERGED from [de.codecrafters.tableview:tableview:2.8.0] C:\Users\Lukasz\.gradle\caches\transforms-1\files-1.1\tableview-2.8.0.aar\3249ba63988af19f13d08e1d627a2523\AndroidManifest.xml:11:5-53
 MERGED from [de.codecrafters.tableview:tableview:2.8.0] C:\Users\Lukasz\.gradle\caches\transforms-1\files-1.1\tableview-2.8.0.aar\3249ba63988af19f13d08e1d627a2523\AndroidManifest.xml:11:5-53
 MERGED from [com.android.support:design:28.0.0] C:\Users\Lukasz\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\87d20e243e1eda5bbe954b22d9366048\AndroidManifest.xml:22:5-20
@@ -80,43 +80,49 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Lukasz\.gr
 	android:theme
 		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:11:9-42
 activity#net.ddns.achouse.appfigurecalc.MainActivity
-ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:12:9-18:20
+ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:12:9-20:20
 	android:screenOrientation
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:12:48-82
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:14:13-47
 	android:name
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:12:19-47
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:13:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:13:13-17:29
+ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:14:17-69
+ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:14:25-66
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:18:27-74
 activity#net.ddns.achouse.appfigurecalc.AddActivity
-ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:19:9-84
+ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:21:9-23:50
 	android:screenOrientation
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:19:47-81
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:23:13-47
 	android:name
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:19:19-46
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:22:13-40
 activity#net.ddns.achouse.appfigurecalc.DisplayActivity
-ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:20:9-88
+ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:24:9-26:50
 	android:screenOrientation
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:20:51-85
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:26:13-47
 	android:name
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:20:19-50
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:25:13-44
 activity#net.ddns.achouse.appfigurecalc.DisplayStatsActivity
-ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:21:9-25:59
+ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:27:9-31:49
 	android:screenOrientation
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:25:13-47
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:30:13-47
 	android:label
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:23:13-65
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:29:13-65
 	android:theme
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:24:13-46
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:31:13-46
 	android:name
-		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:22:13-49
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:28:13-49
+activity#net.ddns.achouse.appfigurecalc.SettingsActivity
+ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:32:9-34:50
+	android:screenOrientation
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:34:13-47
+	android:name
+		ADDED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml:33:13-45
 uses-sdk
 INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\politechnika\VII semestr\Android\Laboratorium\Projekt github\appFigureCalc\app\src\main\AndroidManifest.xml

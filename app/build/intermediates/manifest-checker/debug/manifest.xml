@@ -38,6 +38,9 @@
             android:label="@string/title_activity_display_stats"
             android:screenOrientation="sensor"
             android:theme="@style/GreenDarky" />
+        <activity
+            android:name="net.ddns.achouse.appfigurecalc.SettingsActivity"
+            android:screenOrientation="sensor" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
