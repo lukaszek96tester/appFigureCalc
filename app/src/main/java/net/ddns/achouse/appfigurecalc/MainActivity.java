@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             //tutaj jest przechowywana lista figur jest zapisywana w metodzie onSaveInstanceSave
             listFigures = savedInstanceState.getParcelableArrayList("listFigures");
         } else {
-            min = -5;
+            min = 0;
             max = 5;
             numberOfFigures = 6;
             generateFigures();

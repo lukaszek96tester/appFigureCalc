@@ -29,7 +29,9 @@
             android:label="@string/title_activity_display_stats"
             android:screenOrientation="sensor"
             android:theme="@style/GreenDarky" />
-        <activity android:name=".SettingsActivity"></activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:screenOrientation="sensor" />
     </application>
 
 </manifest>
