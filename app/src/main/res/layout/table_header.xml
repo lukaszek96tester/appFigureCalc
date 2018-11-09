@@ -1,76 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/type"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_centerVertical="true"
-        android:textSize="14dp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:text="Type"/>
-    <ImageButton
-        android:id="@+id/c0sort"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true">
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icons8_sort_up"
-        android:background="@null"/>
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"/>
+        <ImageButton
+            android:id="@+id/c0sort"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/type"
+            android:background="@null"
+            android:src="@drawable/icons8_sort_up" />
+    </RelativeLayout>
     <TextView
         android:id="@+id/linearDimension"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:paddingLeft="100dp"
-        android:layout_centerVertical="true"
-        android:gravity="right"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="0dp"
+        android:paddingLeft="0dp"
+        android:text="Dimension"
         android:textSize="14dp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:text="Dimension" />
+        android:textStyle="bold" />
     <ImageButton
         android:id="@+id/c1sort"
-        android:layout_width="wrap_content"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:src="@drawable/icons8_sort_up"
-        android:background="@null"/>
+        android:background="@null"
+        android:layout_toRightOf="@id/linearDimension"/>
+
     <TextView
         android:id="@+id/area"
-        android:layout_width="wrap_content"
+        android:layout_width="68dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:paddingRight="80dp"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@id/perimeter"
-        android:gravity="left"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="32dp"
+        android:text="Area"
         android:textSize="14dp"
         android:textStyle="bold"
-        android:text="Area"/>
+        android:layout_toRightOf="@id/c1sort"/>
     <ImageButton
         android:id="@+id/c2sort"
-        android:layout_width="wrap_content"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/icons8_sort_up"
-        android:background="@null"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="66dp"
+        android:layout_toRightOf="@id/area"
+        android:background="@null"
+        android:src="@drawable/icons8_sort_up" />
     <TextView
         android:id="@+id/perimeter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:gravity="right"
         android:textSize="14dp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        android:text="Perimeter"/>
+        android:text="Perimeter"
+        android:layout_toLeftOf="@id/c3sort"/>
     <ImageButton
         android:id="@+id/c3sort"
-        android:layout_width="wrap_content"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:src="@drawable/icons8_sort_up"
-        android:background="@null"/>
-</LinearLayout>
+        android:background="@null"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>
