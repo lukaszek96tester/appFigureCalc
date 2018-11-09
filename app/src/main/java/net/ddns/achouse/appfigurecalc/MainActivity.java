@@ -121,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
                 sum++;
             }
         }
-
         return sum;
     }
 
@@ -179,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         String [][] figuresData = new String[numberOfFigures][4];
         for (int rows = 0; rows < numberOfFigures; rows++)
         {
-            type = listFigures.get(rows).getType();
+            /*type = listFigures.get(rows).getType();
             switch(type) {
                 case "Square":
                     figuresData[rows][0] = "■";
@@ -190,14 +189,15 @@ public class MainActivity extends AppCompatActivity {
                 case "Circle":
                     figuresData[rows][0] = "●";
                     break;
-            }
+            }*/
 
             //FORMATOWANIE - OBCIECIE DO TRZECH MIEJSC PO PRZECINKU
-            DecimalFormat df = new DecimalFormat("#.###");
+/*            DecimalFormat df = new DecimalFormat("#.###");
 
             figuresData[rows][1] = df.format(listFigures.get(rows).getLinearDimension());
             figuresData[rows][2] = df.format(listFigures.get(rows).getArea());
-            figuresData[rows][3] = df.format(listFigures.get(rows).getPerimeter());
+            figuresData[rows][3] = df.format(listFigures.get(rows).getPerimeter());*/
+
         }
 
         bundle.putSerializable("figuresData", figuresData);
@@ -205,6 +205,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToShowFiguresActivity(View v) {
+        Intent intent = new Intent(this, ActivityShowFigures.class);
+        Bundle bundle = new Bundle();
+        int numberOfFigures = listFigures.size();
+
+
+        bundle.putParcelableArrayList("figuresData", listFigures);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
     public void goToDisplayStatsActivity(View v) {
         Intent intent = new Intent(this, DisplayStatsActivity.class);
         Bundle bundle = new Bundle();

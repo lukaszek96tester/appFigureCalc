@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+    <ImageView
+        android:id="@+id/type"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+    <TextView
+        android:id="@+id/linearDimension"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="100dp"
+        android:layout_centerVertical="true"
+        android:gravity="right"
+        android:textSize="14dp"
+        android:maxLines="1"
+        android:maxLength="5"
+        android:ellipsize="end"/>
+    <TextView
+        android:id="@+id/area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingRight="100dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/perimeter"
+        android:gravity="right"
+        android:textSize="14dp"
+        android:maxLines="1"
+        android:maxLength="5"
+        android:ellipsize="end"/>
+    <TextView
+        android:id="@+id/perimeter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:gravity="right"
+        android:textSize="14dp"
+        android:maxLines="1"
+        android:maxLength="5"
+        android:ellipsize="end"/>
+</RelativeLayout>

@@ -42,7 +42,7 @@
                 android:id="@+id/MA_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="goToDisplayActivity"
+                android:onClick="goToShowFiguresActivity"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
                 android:text="@string/MA_button_display" />
