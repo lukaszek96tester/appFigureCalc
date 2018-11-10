@@ -74,11 +74,11 @@ public class ActivityShowFigures extends AppCompatActivity {
             public void onClick(View v) {
                 if(asc) {
                     Collections.sort(figuresList, compareType);
-                    c0.setImageResource(R.drawable.icons8_sort_up);
+                    c0.setImageResource(R.drawable.sort_up);
                     asc = false;
                 } else {
                     Collections.sort(figuresList, Collections.reverseOrder(compareType));
-                    c0.setImageResource(R.drawable.icons8_sort_down);
+                    c0.setImageResource(R.drawable.sort_down);
                     asc = true;
                 }
                 ((FigureListAdapter) adap).notifyDataSetChanged();
@@ -91,11 +91,11 @@ public class ActivityShowFigures extends AppCompatActivity {
             public void onClick(View v) {
                 if(asc) {
                     Collections.sort(figuresList, compareLinearDimension);
-                    c1.setImageResource(R.drawable.icons8_sort_up);
+                    c1.setImageResource(R.drawable.sort_up);
                     asc = false;
                 } else {
                     Collections.sort(figuresList, Collections.reverseOrder(compareLinearDimension));
-                    c1.setImageResource(R.drawable.icons8_sort_down);
+                    c1.setImageResource(R.drawable.sort_down);
                     asc = true;
                 }
                 ((FigureListAdapter) adap).notifyDataSetChanged();
@@ -108,11 +108,11 @@ public class ActivityShowFigures extends AppCompatActivity {
             public void onClick(View v) {
                 if(asc) {
                     Collections.sort(figuresList, compareArea);
-                    c2.setImageResource(R.drawable.icons8_sort_up);
+                    c2.setImageResource(R.drawable.sort_up);
                     asc = false;
                 } else {
                     Collections.sort(figuresList, Collections.reverseOrder(compareArea));
-                    c2.setImageResource(R.drawable.icons8_sort_down);
+                    c2.setImageResource(R.drawable.sort_down);
                     asc = true;
                 }
                 ((FigureListAdapter) adap).notifyDataSetChanged();
@@ -125,11 +125,11 @@ public class ActivityShowFigures extends AppCompatActivity {
             public void onClick(View v) {
                 if(asc) {
                     Collections.sort(figuresList, comparePerimeter);
-                    c3.setImageResource(R.drawable.icons8_sort_up);
+                    c3.setImageResource(R.drawable.sort_up);
                     asc = false;
                 } else {
                     Collections.sort(figuresList, Collections.reverseOrder(comparePerimeter));
-                    c3.setImageResource(R.drawable.icons8_sort_down);
+                    c3.setImageResource(R.drawable.sort_down);
                     asc = true;
                 }
                 ((FigureListAdapter) adap).notifyDataSetChanged();

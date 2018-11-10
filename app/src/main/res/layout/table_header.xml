@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/type"
             android:background="@null"
-            android:src="@drawable/icons8_sort_up" />
+            android:src="@drawable/sort_basic" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
             android:id="@+id/c1sort"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/icons8_sort_up"
+            android:src="@drawable/sort_basic"
             android:background="@null"
             android:layout_toRightOf="@id/linearDimension"/>
     </RelativeLayout>
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/area"
             android:background="@null"
-            android:src="@drawable/icons8_sort_up" />
+            android:src="@drawable/sort_basic" />
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/perimeterA"
@@ -80,7 +80,7 @@
             android:id="@+id/c3sort"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/icons8_sort_up"
+            android:src="@drawable/sort_basic"
             android:background="@null"
             android:layout_toRightOf="@id/perimeter"/>
     </RelativeLayout>
