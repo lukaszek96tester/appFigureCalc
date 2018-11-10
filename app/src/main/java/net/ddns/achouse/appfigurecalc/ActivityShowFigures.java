@@ -25,10 +25,28 @@ public class ActivityShowFigures extends AppCompatActivity {
 
 
         //comparators
-        final Comparator<Figure> compareByLinearDimension = new Comparator<Figure>() {
+        final Comparator<Figure> compareType = new Comparator<Figure>() {
+            @Override
+            public int compare(Figure f1, Figure f2) {
+                return f1.getType().compareTo(f2.getType());
+            }
+        };
+        final Comparator<Figure> compareLinearDimension = new Comparator<Figure>() {
             @Override
             public int compare(Figure f1, Figure f2) {
                 return Double.compare(f1.getLinearDimension(), f2.getLinearDimension());
+            }
+        };
+        final Comparator<Figure> compareArea = new Comparator<Figure>() {
+            @Override
+            public int compare(Figure f1, Figure f2) {
+                return Double.compare(f1.getArea(), f2.getArea());
+            }
+        };
+        final Comparator<Figure> comparePerimeter = new Comparator<Figure>() {
+            @Override
+            public int compare(Figure f1, Figure f2) {
+                return Double.compare(f1.getPerimeter(), f2.getPerimeter());
             }
         };
 
@@ -49,35 +67,73 @@ public class ActivityShowFigures extends AppCompatActivity {
         });*/
 
         //sortowanie
+        ImageButton c0 = (ImageButton) findViewById(R.id.c0sort);
+        c0.setOnClickListener(new View.OnClickListener() {
+            boolean asc = true;
+            ImageButton c0 = (ImageButton) findViewById(R.id.c0sort);
+            public void onClick(View v) {
+                if(asc) {
+                    Collections.sort(figuresList, compareType);
+                    c0.setImageResource(R.drawable.icons8_sort_up);
+                    asc = false;
+                } else {
+                    Collections.sort(figuresList, Collections.reverseOrder(compareType));
+                    c0.setImageResource(R.drawable.icons8_sort_down);
+                    asc = true;
+                }
+                ((FigureListAdapter) adap).notifyDataSetChanged();
+            }
+        });
         ImageButton c1 = (ImageButton) findViewById(R.id.c1sort);
         c1.setOnClickListener(new View.OnClickListener() {
             boolean asc = true;
             ImageButton c1 = (ImageButton) findViewById(R.id.c1sort);
             public void onClick(View v) {
                 if(asc) {
-                    Collections.sort(figuresList, compareByLinearDimension);
+                    Collections.sort(figuresList, compareLinearDimension);
                     c1.setImageResource(R.drawable.icons8_sort_up);
                     asc = false;
                 } else {
-                    Collections.sort(figuresList, Collections.reverseOrder(compareByLinearDimension));
+                    Collections.sort(figuresList, Collections.reverseOrder(compareLinearDimension));
                     c1.setImageResource(R.drawable.icons8_sort_down);
                     asc = true;
                 }
                 ((FigureListAdapter) adap).notifyDataSetChanged();
             }
         });
+        ImageButton c2 = (ImageButton) findViewById(R.id.c2sort);
+        c2.setOnClickListener(new View.OnClickListener() {
+            boolean asc = true;
+            ImageButton c2 = (ImageButton) findViewById(R.id.c2sort);
+            public void onClick(View v) {
+                if(asc) {
+                    Collections.sort(figuresList, compareArea);
+                    c2.setImageResource(R.drawable.icons8_sort_up);
+                    asc = false;
+                } else {
+                    Collections.sort(figuresList, Collections.reverseOrder(compareArea));
+                    c2.setImageResource(R.drawable.icons8_sort_down);
+                    asc = true;
+                }
+                ((FigureListAdapter) adap).notifyDataSetChanged();
+            }
+        });
+        ImageButton c3 = (ImageButton) findViewById(R.id.c3sort);
+        c3.setOnClickListener(new View.OnClickListener() {
+            boolean asc = true;
+            ImageButton c3 = (ImageButton) findViewById(R.id.c3sort);
+            public void onClick(View v) {
+                if(asc) {
+                    Collections.sort(figuresList, comparePerimeter);
+                    c3.setImageResource(R.drawable.icons8_sort_up);
+                    asc = false;
+                } else {
+                    Collections.sort(figuresList, Collections.reverseOrder(comparePerimeter));
+                    c3.setImageResource(R.drawable.icons8_sort_down);
+                    asc = true;
+                }
+                ((FigureListAdapter) adap).notifyDataSetChanged();
+            }
+        });
         }
-/*
-    private ArrayList getListData() {
-        ArrayList<Figure> results = new ArrayList<>();
-        Circle user1 = new Circle(4);
-        user1.calculateArea();
-        user1.calculatePerimeter();
-        results.add(user1);
-        Square user2 = new Square(3);
-        user2.calculateArea();
-        user2.calculatePerimeter();
-        results.add(user2);
-        return results;
-    }*/
 }
