@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Random;
 
 public class ActivityShowFigures extends AppCompatActivity {
 
@@ -181,7 +182,6 @@ public class ActivityShowFigures extends AppCompatActivity {
         menu.add(0, v.getId(), 0, "ADD RANDOM");
     }
 
-
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
@@ -206,20 +206,92 @@ public class ActivityShowFigures extends AppCompatActivity {
                     Circle circle = new Circle(figuresList.get(activeListPosition).getLinearDimension());
                     circle.calculateArea();
                     circle.calculatePerimeter();
+                    figuresList.add(circle);
                     break;
             }
         } else if(item.getTitle() == "DELETE") {
             figuresList.remove(activeListPosition);
         } else if(item.getTitle() == "ADD RANDOM") {
+            figuresList.add(generateFigure());
+        } else if(item.getTitle() == "DELETE ALL AND GENERATE") {
+            figuresList.clear();
+            generateFigures(4, 0, 5);
 
         }
         ((FigureListAdapter) adap).notifyDataSetChanged();
         return true;
     }
 
-
     //TODO generowanie figur (tutaj podobnie jak w Main Activity)
-    private void generateFigures(int numberOfFigures, double min, double max) {
+    private void generateFigures(int numberOfFigures, float min, float max) {
+        Random generator = new Random();
 
+        int type;
+        float linearDimension;
+        for (int i = 0; i < numberOfFigures; i++)
+        {
+            type = generator.nextInt(3);
+            linearDimension = min + generator.nextFloat() * (max - min);
+            switch(type)
+            {
+                case 0:
+                {
+                    figuresList.add(new Square(linearDimension));
+                }
+                break;
+                case 1:
+                {
+                    figuresList.add(new Circle(linearDimension));
+                }
+                break;
+                case 2:
+                {
+                    figuresList.add(new EquilateralTriangle(linearDimension));
+                }
+            }
+        }
+
+        // Policz pola i obwody
+        for (int j = 0; j < numberOfFigures; j++)
+        {
+            figuresList.get(j).calculatePerimeter();
+            figuresList.get(j).calculateArea();
+        }
+    }
+
+
+    public Figure generateFigure() {
+
+        Random generator = new Random();
+        int min = 0;
+        int max = 5;
+        int type;
+        float linearDimension;
+        type = generator.nextInt(3);
+        linearDimension = min + generator.nextFloat() * (max - min);
+
+        Figure figure = new Square(linearDimension);
+
+        switch(type)
+        {
+            case 0:
+            {
+                figure = new Square(linearDimension);
+            }
+            break;
+            case 1:
+            {
+                figure = new Circle(linearDimension);
+            }
+            break;
+            case 2:
+            {
+                figure = new EquilateralTriangle(linearDimension);
+            }
+        }
+
+        figure.calculateArea();
+        figure.calculatePerimeter();
+        return figure;
     }
 }
