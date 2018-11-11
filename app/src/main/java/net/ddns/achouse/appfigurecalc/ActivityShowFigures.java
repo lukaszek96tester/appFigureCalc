@@ -177,6 +177,8 @@ public class ActivityShowFigures extends AppCompatActivity {
         menu.setHeaderTitle("Options");
         menu.add(0, v.getId(), 0, "DELETE");
         menu.add(0, v.getId(), 0, "DUPLICATE");
+        menu.add(0, v.getId(), 0, "DELETE ALL AND GENERATE");
+        menu.add(0, v.getId(), 0, "ADD RANDOM");
     }
 
 
@@ -208,8 +210,16 @@ public class ActivityShowFigures extends AppCompatActivity {
             }
         } else if(item.getTitle() == "DELETE") {
             figuresList.remove(activeListPosition);
+        } else if(item.getTitle() == "ADD RANDOM") {
+
         }
         ((FigureListAdapter) adap).notifyDataSetChanged();
         return true;
+    }
+
+
+    //TODO generowanie figur (tutaj podobnie jak w Main Activity)
+    private void generateFigures(int numberOfFigures, double min, double max) {
+
     }
 }
