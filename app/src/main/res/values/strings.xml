@@ -15,4 +15,8 @@
     <string name="confirm">Confirm</string>
     <string name="title_activity_display_stats">DisplayStatsActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="settings">Settings</string>
+    <string name="display_statistics">Display statistics</string>
+    <string name="add_new_figure">Add new figure</string>
+    <string name="display_figures">Display figures</string>
 </resources>
