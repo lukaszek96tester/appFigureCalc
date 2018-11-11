@@ -251,6 +251,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToShowStatisticsActivity(View v) {
+        Intent intent = new Intent(this, ActivityShowStatistics.class);
+        Bundle bundle = new Bundle();
+
+        bundle.putParcelableArrayList("figuresData", listFigures);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         //odczytywanie zwróconcyh danych z aktywności wywołanych
         super.onActivityResult(requestCode, resultCode, data);

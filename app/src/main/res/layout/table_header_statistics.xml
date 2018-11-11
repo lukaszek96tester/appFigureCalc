@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true">
+    <RelativeLayout
+        android:id="@+id/typeA_stats"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight=".15">
+        <TextView
+            android:id="@+id/type_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"/>
+        <ImageButton
+            android:id="@+id/c0sort_stats"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/type_stats"
+            android:background="@null"
+            android:src="@drawable/sort_basic" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/numberA"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight=".20">
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+        <ImageButton
+            android:id="@+id/c1sort_stats"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sort_basic"
+            android:background="@null"
+            android:layout_toRightOf="@id/number" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/averageAreaA"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/numberA"
+        android:layout_width="0dp"
+        android:layout_weight=".27">
+        <TextView
+            android:id="@+id/averageArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Avg. area"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+        <ImageButton
+            android:id="@+id/c2sort_stats"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/sort_basic"
+            android:layout_toRightOf="@id/averageArea"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/averagePerimeterA"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_width="0dp"
+        android:layout_weight=".33">
+        <TextView
+            android:id="@+id/averagePerimeter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Avg. perimeter"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+        <ImageButton
+            android:id="@+id/c3sort_stats"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/averagePerimeter"
+            android:background="@null"
+            android:src="@drawable/sort_basic" />
+    </RelativeLayout>
+</LinearLayout>

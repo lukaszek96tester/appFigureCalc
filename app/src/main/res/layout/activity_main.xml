@@ -58,7 +58,7 @@
                 android:id="@+id/MA_button_display_stats"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="goToDisplayStatsActivity"
+                android:onClick="goToShowStatisticsActivity"
                 android:text="Display statistics" />
 
             <Button
