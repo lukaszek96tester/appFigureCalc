@@ -25,7 +25,7 @@ import java.util.Random;
 
 public class ActivityShowFigures extends AppCompatActivity {
 
-    private DrawerLayout mDrawerLayout;
+    public DrawerLayout mDrawerLayout;
 
     ArrayList<Figure> figuresList;
     ListAdapter adap;
@@ -77,6 +77,45 @@ public class ActivityShowFigures extends AppCompatActivity {
 
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
+
+                        Intent intent;
+                        Bundle bundle = new Bundle();
+                        switch(menuItem.getItemId()) {
+                            case R.id.nav_display_figures:
+
+                                intent = new Intent(getApplicationContext(), ActivityShowFigures.class);
+
+
+
+                                bundle.putParcelableArrayList("figuresData", figuresList);
+                                intent.putExtras(bundle);
+                                startActivity(intent);
+
+                                break;
+                            case R.id.nav_add_new_figure:
+//                                intent = new Intent(ActivityShowFigures.this, ActivityShowStatistics.class);
+//                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                                ActivityShowFigures.this.startActivity(intent);
+//                                break;
+
+                                //ArrayList<Figure> listFigures = new ArrayList<Figure>();
+                                generateFigures(4, 0, 5);
+
+                            intent = new Intent(getApplicationContext(), ActivityShowStatistics.class);
+                            bundle = new Bundle();
+
+
+
+                            bundle.putParcelableArrayList("figuresData", figuresList);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+//                            case R.id.nav_display_statistics:
+//                                fragmentClass = CatalogFragment.class;
+//                                break;
+//                            case R.id.nav_settings:
+//                                fragmentClass = CatalogFragment.class;
+//                                break;
+                        }
 
                         return true;
                     }

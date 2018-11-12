@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class ActivityShowStatistics extends AppCompatActivity {
+public class ActivityShowStatistics extends ActivityShowFigures {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
