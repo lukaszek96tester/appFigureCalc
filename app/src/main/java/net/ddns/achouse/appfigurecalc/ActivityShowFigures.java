@@ -38,96 +38,7 @@ public class ActivityShowFigures extends AppCompatActivity {
         figuresList = bundle.getParcelableArrayList("figuresData");
         final ListView lv = (ListView) findViewById(R.id.figures_list);
 
-        mDrawerLayout = findViewById(R.id.drawer_layout);
-
-        mDrawerLayout.addDrawerListener(
-                new DrawerLayout.DrawerListener() {
-                    @Override
-                    public void onDrawerSlide(View drawerView, float slideOffset) {
-                        // Respond when the drawer's position changes
-                    }
-
-                    @Override
-                    public void onDrawerOpened(View drawerView) {
-                        // Respond when the drawer is opened
-                    }
-
-                    @Override
-                    public void onDrawerClosed(View drawerView) {
-                        // Respond when the drawer is closed
-                    }
-
-                    @Override
-                    public void onDrawerStateChanged(int newState) {
-                        // Respond when the drawer motion state changes
-                    }
-                }
-        );
-
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        // set item as selected to persist highlight
-                        menuItem.setChecked(true);
-                        // close drawer when item is tapped
-                        mDrawerLayout.closeDrawers();
-
-                        // Add code here to update the UI based on the item selected
-                        // For example, swap UI fragments here
-
-                        Intent intent;
-                        Bundle bundle = new Bundle();
-                        switch(menuItem.getItemId()) {
-                            case R.id.nav_display_figures:
-
-                                intent = new Intent(getApplicationContext(), ActivityShowFigures.class);
-
-
-
-                                bundle.putParcelableArrayList("figuresData", figuresList);
-                                intent.putExtras(bundle);
-                                startActivity(intent);
-
-                                break;
-                            case R.id.nav_add_new_figure:
-//                                intent = new Intent(ActivityShowFigures.this, ActivityShowStatistics.class);
-//                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                                ActivityShowFigures.this.startActivity(intent);
-//                                break;
-
-                                //ArrayList<Figure> listFigures = new ArrayList<Figure>();
-                                generateFigures(4, 0, 5);
-
-                            intent = new Intent(getApplicationContext(), ActivityShowStatistics.class);
-                            bundle = new Bundle();
-
-
-
-                            bundle.putParcelableArrayList("figuresData", figuresList);
-                            intent.putExtras(bundle);
-                            startActivity(intent);
-//                            case R.id.nav_display_statistics:
-//                                fragmentClass = CatalogFragment.class;
-//                                break;
-//                            case R.id.nav_settings:
-//                                fragmentClass = CatalogFragment.class;
-//                                break;
-                        }
-
-                        return true;
-                    }
-                });
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        ActionBar actionbar = getSupportActionBar();
-        actionbar.setDisplayHomeAsUpEnabled(true);
-        actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
-
+        onCreateDrawer();
 
         //comparators
         final Comparator<Figure> compareType = new Comparator<Figure>() {
@@ -268,6 +179,84 @@ public class ActivityShowFigures extends AppCompatActivity {
             }
         });
         }
+
+    protected void onCreateDrawer() {
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+
+        mDrawerLayout.addDrawerListener(
+                new DrawerLayout.DrawerListener() {
+                    @Override
+                    public void onDrawerSlide(View drawerView, float slideOffset) {
+                        // Respond when the drawer's position changes
+                    }
+
+                    @Override
+                    public void onDrawerOpened(View drawerView) {
+                        // Respond when the drawer is opened
+                    }
+
+                    @Override
+                    public void onDrawerClosed(View drawerView) {
+                        // Respond when the drawer is closed
+                    }
+
+                    @Override
+                    public void onDrawerStateChanged(int newState) {
+                        // Respond when the drawer motion state changes
+                    }
+                }
+        );
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        // close drawer when item is tapped
+                        mDrawerLayout.closeDrawers();
+
+                        // Add code here to update the UI based on the item selected
+                        // For example, swap UI fragments here
+
+                        Intent intent;
+                        Bundle bundle = new Bundle();
+                        switch(menuItem.getItemId()) {
+                            case R.id.nav_display_figures:
+                                intent = new Intent(getApplicationContext(), ActivityShowFigures.class);
+                                bundle.putParcelableArrayList("figuresData", figuresList);
+                                intent.putExtras(bundle);
+                                startActivity(intent);
+                                break;
+                            case R.id.nav_add_new_figure:
+                                //ArrayList<Figure> listFigures = new ArrayList<Figure>();
+                                generateFigures(4, 0, 5);
+                                intent = new Intent(getApplicationContext(), ActivityShowStatistics.class);
+                                bundle = new Bundle();
+                                bundle.putParcelableArrayList("figuresData", figuresList);
+                                intent.putExtras(bundle);
+                                startActivity(intent);
+
+//TODO dokonczyc przejscia do pozostalych aktywnosci
+//                            case R.id.nav_display_statistics:
+//                                fragmentClass = CatalogFragment.class;
+//                                break;
+//                            case R.id.nav_settings:
+//                                fragmentClass = CatalogFragment.class;
+//                                break;
+                        }
+
+                        return false;
+                    }
+                });
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        ActionBar actionbar = getSupportActionBar();
+        actionbar.setDisplayHomeAsUpEnabled(true);
+        actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
+
+    }
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {

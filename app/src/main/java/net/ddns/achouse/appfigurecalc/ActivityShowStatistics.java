@@ -1,7 +1,6 @@
 package net.ddns.achouse.appfigurecalc;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+//extend ActivityShowFigures because of the drawer
+//activityShowFigures extends AppCompatActivity so everything is ok
 public class ActivityShowStatistics extends ActivityShowFigures {
 
     @Override
@@ -23,6 +24,8 @@ public class ActivityShowStatistics extends ActivityShowFigures {
         Bundle bundle = passed.getExtras();
         final ArrayList figuresList = bundle.getParcelableArrayList("figuresData");
         final ListView lv = (ListView) findViewById(R.id.statistics_list);
+
+        onCreateDrawer();
 
         //comparators
         final Comparator<Statistic> compareType = new Comparator<Statistic>() {
