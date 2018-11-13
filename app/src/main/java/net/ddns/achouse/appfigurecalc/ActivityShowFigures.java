@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -27,15 +28,27 @@ public class ActivityShowFigures extends AppCompatActivity {
 
     public DrawerLayout mDrawerLayout;
 
-    ArrayList<Figure> figuresList;
+    ArrayList<Figure> figuresList = new ArrayList<Figure>();
     ListAdapter adap;
+
+    int min = 0;
+    int max = 5;
+    int numberOfFigures = 6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_figures);
         Intent passed = getIntent();
         Bundle bundle = passed.getExtras();
-        figuresList = bundle.getParcelableArrayList("figuresData");
+        //figuresList = bundle.getParcelableArrayList("figuresData");
+        if (savedInstanceState != null)
+        {
+            //tutaj jest przechowywana lista figur jest zapisywana w metodzie onSaveInstanceSave
+            figuresList = savedInstanceState.getParcelableArrayList("listFigures");
+        } else {
+            generateFigures(numberOfFigures,min,max);
+        }
+        //generateFigures(5,1,5);
         final ListView lv = (ListView) findViewById(R.id.figures_list);
 
         onCreateDrawer();
@@ -73,15 +86,6 @@ public class ActivityShowFigures extends AppCompatActivity {
         lv.addHeaderView(header);
         adap = new FigureListAdapter(this, figuresList);
         lv.setAdapter(adap);
-/*        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> a, View v, int position, long id) {
-                Toast.makeText(ActivityShowFigures.this, Integer.toString(position) + " " +Long.toString(id), Toast.LENGTH_SHORT).show();
-                //Figure figure = (Figure) lv.getItemAtPosition(position);
-                //Toast.makeText(ActivityShowFigures.this, "Selected :" + " " + figure.getType() + ", "+ figure.getLinearDimension(), Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });*/
 
         registerForContextMenu(lv);
 
@@ -178,7 +182,15 @@ public class ActivityShowFigures extends AppCompatActivity {
                 ((FigureListAdapter) adap).notifyDataSetChanged();
             }
         });
-        }
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //tutaj jest zapisywana informacja o figurach w przypadku zamknięcia aktywności
+        outState.putParcelableArrayList("listFigures", figuresList);
+    }
 
     protected void onCreateDrawer() {
         mDrawerLayout = findViewById(R.id.drawer_layout);
@@ -214,37 +226,18 @@ public class ActivityShowFigures extends AppCompatActivity {
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         // close drawer when item is tapped
                         mDrawerLayout.closeDrawers();
-
-                        // Add code here to update the UI based on the item selected
-                        // For example, swap UI fragments here
-
-                        Intent intent;
-                        Bundle bundle = new Bundle();
                         switch(menuItem.getItemId()) {
-                            case R.id.nav_display_figures:
-                                intent = new Intent(getApplicationContext(), ActivityShowFigures.class);
-                                bundle.putParcelableArrayList("figuresData", figuresList);
-                                intent.putExtras(bundle);
-                                startActivity(intent);
-                                break;
                             case R.id.nav_add_new_figure:
-                                //ArrayList<Figure> listFigures = new ArrayList<Figure>();
-                                generateFigures(4, 0, 5);
-                                intent = new Intent(getApplicationContext(), ActivityShowStatistics.class);
-                                bundle = new Bundle();
-                                bundle.putParcelableArrayList("figuresData", figuresList);
-                                intent.putExtras(bundle);
-                                startActivity(intent);
-
+                                goToAddActivity();
+                                break;
 //TODO dokonczyc przejscia do pozostalych aktywnosci
 //                            case R.id.nav_display_statistics:
 //                                fragmentClass = CatalogFragment.class;
 //                                break;
-//                            case R.id.nav_settings:
-//                                fragmentClass = CatalogFragment.class;
-//                                break;
+                            case R.id.nav_settings:
+                                goToSettingsActivity();
+                                break;
                         }
-
                         return false;
                     }
                 });
@@ -257,6 +250,7 @@ public class ActivityShowFigures extends AppCompatActivity {
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
     }
+
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -298,10 +292,10 @@ public class ActivityShowFigures extends AppCompatActivity {
         } else if(item.getTitle() == "DELETE") {
             figuresList.remove(activeListPosition);
         } else if(item.getTitle() == "ADD RANDOM") {
-            figuresList.add(generateFigure());
+            generateFigures(1, min, max);
         } else if(item.getTitle() == "DELETE ALL AND GENERATE") {
             figuresList.clear();
-            generateFigures(4, 0, 5);
+            generateFigures(numberOfFigures, min, max);
 
         }
         ((FigureListAdapter) adap).notifyDataSetChanged();
@@ -346,39 +340,130 @@ public class ActivityShowFigures extends AppCompatActivity {
     }
 
 
-    public Figure generateFigure() {
+    protected int calculateNumberOfFigures(String figureType) {
+        int sum = 0;
 
-        Random generator = new Random();
-        int min = 0;
-        int max = 5;
-        int type;
-        float linearDimension;
-        type = generator.nextInt(3);
-        linearDimension = min + generator.nextFloat() * (max - min);
-
-        Figure figure = new Square(linearDimension);
-
-        switch(type)
-        {
-            case 0:
-            {
-                figure = new Square(linearDimension);
-            }
-            break;
-            case 1:
-            {
-                figure = new Circle(linearDimension);
-            }
-            break;
-            case 2:
-            {
-                figure = new EquilateralTriangle(linearDimension);
+        for (int rows = 0; rows < figuresList.size(); rows++ ) {
+            if(figuresList.get(rows).getType() == figureType) {
+                sum++;
             }
         }
+        return sum;
+    }
 
-        figure.calculateArea();
-        figure.calculatePerimeter();
-        return figure;
+    protected double calculateAverageArea(String figureType) {
+
+        double averageArea = 0;
+        double sum = 0;
+
+        for (int rows = 0; rows < figuresList.size(); rows++ ) {
+            if(figuresList.get(rows).getType() == figureType) {
+                sum = sum + figuresList.get(rows).getArea();
+            }
+        }
+        if(calculateNumberOfFigures(figureType) != 0) {
+            averageArea = sum / calculateNumberOfFigures(figureType);
+        }
+
+        return averageArea;
+    }
+
+    protected double calculateAveragePerimeter(String figureType) {
+
+        double averagePerimeter = 0;
+        double sum = 0;
+
+        for (int rows = 0; rows < figuresList.size(); rows++ ) {
+            if(figuresList.get(rows).getType() == figureType) {
+                sum = sum + figuresList.get(rows).getPerimeter();
+            }
+        }
+        if(calculateNumberOfFigures(figureType) != 0) {
+            averagePerimeter = sum / calculateNumberOfFigures(figureType);
+        }
+
+        return averagePerimeter;
+    }
+
+    public void goToAddActivity() {
+        Intent Intent = new Intent(getBaseContext(),AddActivity.class);
+        // Start AddActivity waiting for result
+        startActivityForResult(Intent, 1);
+    }
+
+    public void goToSettingsActivity() {
+        Intent Intent = new Intent(getBaseContext(),SettingsActivity.class);
+        // Start AddActivity waiting for result
+        startActivityForResult(Intent, 2);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //odczytywanie zwróconcyh danych z aktywności wywołanych
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK && null!=data) {
+                //odczytywanie typu
+                String type = data.getStringExtra("type");
+                //odczytywanie wymiaru liniowego
+                String linearDimension = data.getStringExtra("linearDimension");
+                if (!TextUtils.isEmpty(linearDimension)) {
+                    Double linearDimensionValue = Double.valueOf(linearDimension);
+                    // przetwarzanie wymiaru liniowego i dodanie go do listy figur
+                    switch (type) {
+                        case "Circle": {
+                            Figure figure = new Circle(linearDimensionValue);
+                            figure.calculateArea();
+                            figure.calculatePerimeter();
+                            figuresList.add(figure);
+                        }
+                        break;
+                        case "Equilateral Triangle": {
+                            Figure figure = new EquilateralTriangle(linearDimensionValue);
+                            figure.calculateArea();
+                            figure.calculatePerimeter();
+                            figuresList.add(figure);
+                        }
+                        break;
+                        case "Square": {
+                            Figure figure = new Square(linearDimensionValue);
+                            figure.calculateArea();
+                            figure.calculatePerimeter();
+                            figuresList.add(figure);
+                        }
+                        break;
+                    }
+                    //wypisywanie figur
+                    for (int nr = 0; nr < figuresList.size(); nr = nr + 1) {
+                        String typ = figuresList.get(nr).getType();
+                        // odczyt wlasnosci figury z tablicy figur (tablica zawiera referencje do obiekt�w kt�rymi s� figury)
+                        System.out.println("Type: " + typ);// wyswietlenie sformatowanego wiersza w terminalu
+                        System.out.println("\t Linear Dimension: " + figuresList.get(nr).getLinearDimension() + "\t Area: " + figuresList.get(nr).getArea() + "\t Perimeter: " + figuresList.get(nr).getPerimeter());
+                    }
+                    ((FigureListAdapter) adap).notifyDataSetChanged();
+                }
+            }
+            else {
+                return;
+            }
+        }
+        if (requestCode == 2) {
+            if (resultCode == RESULT_OK && null!=data) {
+                String resultNumberOfFigures = data.getStringExtra("numberOfFigures");
+                String resultMin = data.getStringExtra("min");
+                String resultMax = data.getStringExtra("max");
+                if (!TextUtils.isEmpty(resultNumberOfFigures) && !TextUtils.isEmpty(resultMin) && !TextUtils.isEmpty(resultMax)) {
+                    numberOfFigures = Integer.parseInt(resultNumberOfFigures);
+                    min = Integer.parseInt(resultMin);
+                    max = Integer.parseInt(resultMax);
+                    figuresList.clear();
+                    generateFigures(numberOfFigures, min, max);
+                    ((FigureListAdapter) adap).notifyDataSetChanged();
+                }
+            }
+            else {
+                return;
+            }
+        }
     }
 
     @Override
@@ -390,5 +475,4 @@ public class ActivityShowFigures extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }
