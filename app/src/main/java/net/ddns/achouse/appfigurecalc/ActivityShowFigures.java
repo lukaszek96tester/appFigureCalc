@@ -332,13 +332,12 @@ public class ActivityShowFigures extends AppCompatActivity {
         }
 
         // Policz pola i obwody
-        for (int j = 0; j < numberOfFigures; j++)
+        for (int j = (figuresList.size() - 1); j >= (figuresList.size() - numberOfFigures); j--)
         {
             figuresList.get(j).calculatePerimeter();
             figuresList.get(j).calculateArea();
         }
     }
-
 
     protected int calculateNumberOfFigures(String figureType) {
         int sum = 0;
@@ -381,7 +380,6 @@ public class ActivityShowFigures extends AppCompatActivity {
         if(calculateNumberOfFigures(figureType) != 0) {
             averagePerimeter = sum / calculateNumberOfFigures(figureType);
         }
-
         return averagePerimeter;
     }
 
@@ -411,21 +409,21 @@ public class ActivityShowFigures extends AppCompatActivity {
                     // przetwarzanie wymiaru liniowego i dodanie go do listy figur
                     switch (type) {
                         case "Circle": {
-                            Figure figure = new Circle(linearDimensionValue);
+                            Circle figure = new Circle(linearDimensionValue);
                             figure.calculateArea();
                             figure.calculatePerimeter();
                             figuresList.add(figure);
                         }
                         break;
                         case "Equilateral Triangle": {
-                            Figure figure = new EquilateralTriangle(linearDimensionValue);
+                            EquilateralTriangle figure = new EquilateralTriangle(linearDimensionValue);
                             figure.calculateArea();
                             figure.calculatePerimeter();
                             figuresList.add(figure);
                         }
                         break;
                         case "Square": {
-                            Figure figure = new Square(linearDimensionValue);
+                            Square figure = new Square(linearDimensionValue);
                             figure.calculateArea();
                             figure.calculatePerimeter();
                             figuresList.add(figure);
