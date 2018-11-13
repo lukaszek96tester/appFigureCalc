@@ -56,9 +56,15 @@ public class FigureListAdapter extends BaseAdapter {
                 holder.uType.setImageResource(R.drawable.icons8_circle);
                 break;
         }
-        holder.uLinearDimension.setText(String.valueOf(listData.get(position).getLinearDimension()));
-        holder.uArea.setText(String.valueOf(listData.get(position).getArea()));
-        holder.uPerimeter.setText(String.valueOf(listData.get(position).getPerimeter()));
+        String LinearDimensionFixed = String.valueOf(listData.get(position).getLinearDimension());
+        LinearDimensionFixed = (LinearDimensionFixed + "000000").substring(0, 5);
+        holder.uLinearDimension.setText(LinearDimensionFixed);
+        String AreaFixed = String.valueOf(listData.get(position).getArea());
+        AreaFixed = (AreaFixed + "000000").substring(0, 5);
+        holder.uArea.setText(AreaFixed);
+        String PerimeterFixed = String.valueOf(listData.get(position).getPerimeter());
+        PerimeterFixed = (PerimeterFixed + "000000").substring(0, 5);
+        holder.uPerimeter.setText(PerimeterFixed);
         return v;
     }
     static class ViewHolder {
