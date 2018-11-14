@@ -182,7 +182,6 @@ public class ActivityShowFigures extends AppCompatActivity {
                 ((FigureListAdapter) adap).notifyDataSetChanged();
             }
         });
-
     }
 
     @Override
@@ -248,9 +247,7 @@ public class ActivityShowFigures extends AppCompatActivity {
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
-
     }
-
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -339,50 +336,6 @@ public class ActivityShowFigures extends AppCompatActivity {
         }
     }
 
-    protected int calculateNumberOfFigures(String figureType) {
-        int sum = 0;
-
-        for (int rows = 0; rows < figuresList.size(); rows++ ) {
-            if(figuresList.get(rows).getType() == figureType) {
-                sum++;
-            }
-        }
-        return sum;
-    }
-
-    protected double calculateAverageArea(String figureType) {
-
-        double averageArea = 0;
-        double sum = 0;
-
-        for (int rows = 0; rows < figuresList.size(); rows++ ) {
-            if(figuresList.get(rows).getType() == figureType) {
-                sum = sum + figuresList.get(rows).getArea();
-            }
-        }
-        if(calculateNumberOfFigures(figureType) != 0) {
-            averageArea = sum / calculateNumberOfFigures(figureType);
-        }
-
-        return averageArea;
-    }
-
-    protected double calculateAveragePerimeter(String figureType) {
-
-        double averagePerimeter = 0;
-        double sum = 0;
-
-        for (int rows = 0; rows < figuresList.size(); rows++ ) {
-            if(figuresList.get(rows).getType() == figureType) {
-                sum = sum + figuresList.get(rows).getPerimeter();
-            }
-        }
-        if(calculateNumberOfFigures(figureType) != 0) {
-            averagePerimeter = sum / calculateNumberOfFigures(figureType);
-        }
-        return averagePerimeter;
-    }
-
     public void goToAddActivity() {
         Intent Intent = new Intent(getBaseContext(),AddActivity.class);
         // Start AddActivity waiting for result
@@ -392,7 +345,6 @@ public class ActivityShowFigures extends AppCompatActivity {
     public void goToShowStatisticsActivity() {
         Intent intent = new Intent(getBaseContext(), ActivityShowStatistics.class);
         Bundle bundle = new Bundle();
-
         bundle.putParcelableArrayList("figuresData", figuresList);
         intent.putExtras(bundle);
         startActivity(intent);
