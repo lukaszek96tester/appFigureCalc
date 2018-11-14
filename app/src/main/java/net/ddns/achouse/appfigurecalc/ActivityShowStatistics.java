@@ -72,6 +72,9 @@ public class ActivityShowStatistics extends AppCompatActivity {
         c0.setOnClickListener(new View.OnClickListener() {
             boolean asc = true;
             ImageButton c0 = (ImageButton) findViewById(R.id.c0sort_stats);
+            ImageButton c1 = (ImageButton) findViewById(R.id.c1sort_stats);
+            ImageButton c2 = (ImageButton) findViewById(R.id.c2sort_stats);
+            ImageButton c3 = (ImageButton) findViewById(R.id.c3sort_stats);
             public void onClick(View v) {
                 if(asc) {
                     Collections.sort(listStatistics, compareType);
@@ -82,13 +85,19 @@ public class ActivityShowStatistics extends AppCompatActivity {
                     c0.setImageResource(R.drawable.sort_down);
                     asc = true;
                 }
+                c1.setImageResource(R.drawable.sort_basic);
+                c2.setImageResource(R.drawable.sort_basic);
+                c3.setImageResource(R.drawable.sort_basic);
                 ((StatisticListAdapter) adap).notifyDataSetChanged();
             }
         });
         ImageButton c1 = (ImageButton) findViewById(R.id.c1sort_stats);
         c1.setOnClickListener(new View.OnClickListener() {
             boolean asc = true;
+            ImageButton c0 = (ImageButton) findViewById(R.id.c0sort_stats);
             ImageButton c1 = (ImageButton) findViewById(R.id.c1sort_stats);
+            ImageButton c2 = (ImageButton) findViewById(R.id.c2sort_stats);
+            ImageButton c3 = (ImageButton) findViewById(R.id.c3sort_stats);
             public void onClick(View v) {
                 if(asc) {
                     Collections.sort(listStatistics, compareNumber);
@@ -99,13 +108,19 @@ public class ActivityShowStatistics extends AppCompatActivity {
                     c1.setImageResource(R.drawable.sort_down);
                     asc = true;
                 }
+                c0.setImageResource(R.drawable.sort_basic);
+                c2.setImageResource(R.drawable.sort_basic);
+                c3.setImageResource(R.drawable.sort_basic);
                 ((StatisticListAdapter) adap).notifyDataSetChanged();
             }
         });
         ImageButton c2 = (ImageButton) findViewById(R.id.c2sort_stats);
         c2.setOnClickListener(new View.OnClickListener() {
             boolean asc = true;
+            ImageButton c0 = (ImageButton) findViewById(R.id.c0sort_stats);
+            ImageButton c1 = (ImageButton) findViewById(R.id.c1sort_stats);
             ImageButton c2 = (ImageButton) findViewById(R.id.c2sort_stats);
+            ImageButton c3 = (ImageButton) findViewById(R.id.c3sort_stats);
             public void onClick(View v) {
                 if(asc) {
                     Collections.sort(listStatistics, compareAverageArea);
@@ -116,12 +131,18 @@ public class ActivityShowStatistics extends AppCompatActivity {
                     c2.setImageResource(R.drawable.sort_down);
                     asc = true;
                 }
+                c0.setImageResource(R.drawable.sort_basic);
+                c1.setImageResource(R.drawable.sort_basic);
+                c3.setImageResource(R.drawable.sort_basic);
                 ((StatisticListAdapter) adap).notifyDataSetChanged();
             }
         });
         ImageButton c3 = (ImageButton) findViewById(R.id.c3sort_stats);
         c3.setOnClickListener(new View.OnClickListener() {
             boolean asc = true;
+            ImageButton c0 = (ImageButton) findViewById(R.id.c0sort_stats);
+            ImageButton c1 = (ImageButton) findViewById(R.id.c1sort_stats);
+            ImageButton c2 = (ImageButton) findViewById(R.id.c2sort_stats);
             ImageButton c3 = (ImageButton) findViewById(R.id.c3sort_stats);
             public void onClick(View v) {
                 if(asc) {
@@ -133,6 +154,9 @@ public class ActivityShowStatistics extends AppCompatActivity {
                     c3.setImageResource(R.drawable.sort_down);
                     asc = true;
                 }
+                c0.setImageResource(R.drawable.sort_basic);
+                c1.setImageResource(R.drawable.sort_basic);
+                c2.setImageResource(R.drawable.sort_basic);
                 ((StatisticListAdapter) adap).notifyDataSetChanged();
             }
         });
