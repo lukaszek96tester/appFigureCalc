@@ -104,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/SA_label_1">
 
         <EditText
-            android:id="@+id/SA_min"
+            android:id="@+id/SA_max"
             android:layout_width="94dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -112,11 +112,11 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="numberDecimal"
-            app:layout_constraintStart_toEndOf="@+id/SA_max"
+            app:layout_constraintStart_toEndOf="@+id/SA_min"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/SA_max"
+            android:id="@+id/SA_min"
             android:layout_width="94dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"

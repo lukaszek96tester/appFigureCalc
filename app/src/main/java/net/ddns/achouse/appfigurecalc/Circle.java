@@ -24,11 +24,11 @@ public class Circle extends Figure {
     @Override // ten znacznik moze byc pominiety; sluzy tylko do poinformownia ze ponizsza metoda jest metoda nadpisana
     public void calculateArea() {
         // zawartosc metody - operacje ktore trzeba wykonac aby wyznaczyc pole kwadratu
-        double area = getLinearDimension()*getLinearDimension();
+        double area = Math.PI*(getLinearDimension()*getLinearDimension());
         setArea(area);
     }
     public void calculatePerimeter() {
-        double perimeter = 4*getLinearDimension();
+        double perimeter = 2*Math.PI*getLinearDimension();
         setPerimeter(perimeter);
     }
 
