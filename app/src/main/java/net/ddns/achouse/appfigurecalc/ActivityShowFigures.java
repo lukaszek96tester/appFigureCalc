@@ -31,8 +31,8 @@ public class ActivityShowFigures extends AppCompatActivity {
     ArrayList<Figure> figuresList = new ArrayList<Figure>();
     ListAdapter adap;
 
-    int min = 0;
-    int max = 5;
+    float min = 0;
+    float max = 5;
     int numberOfFigures = 6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -412,8 +412,8 @@ public class ActivityShowFigures extends AppCompatActivity {
                 String resultMax = data.getStringExtra("max");
                 if (!TextUtils.isEmpty(resultNumberOfFigures) && !TextUtils.isEmpty(resultMin) && !TextUtils.isEmpty(resultMax)) {
                     numberOfFigures = Integer.parseInt(resultNumberOfFigures);
-                    min = Integer.parseInt(resultMin);
-                    max = Integer.parseInt(resultMax);
+                    min = Float.parseFloat(resultMin);
+                    max = Float.parseFloat(resultMax);
                     figuresList.clear();
                     generateFigures(numberOfFigures, min, max);
                     ((FigureListAdapter) adap).notifyDataSetChanged();

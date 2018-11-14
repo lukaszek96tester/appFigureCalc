@@ -28,10 +28,14 @@ public class AddActivity extends AppCompatActivity {
         System.out.println(selectedRadioButtonID);
         //String editTextDimensionText = editText_dimension.getText().toString().trim();
         // If nothing is selected from Radio Group, then it return -1
-        if (editText_dimension.getText().toString().equals("")) {
+        if (
+                editText_dimension.getText().toString().equals("")
+                || (editText_dimension.getText().toString().charAt(0) == '.')
+                || (editText_dimension.getText().toString().charAt(editText_dimension.getText().toString().length()-1)== '.')
+                ) {
             //piec ponizszych linijek to wyświetlenie po prostu tego komunikatu ten alert nazywa sie toastem
             Context context = getApplicationContext();
-            CharSequence text = "Choose type and linear dimension for the figure first";
+            CharSequence text = "Choose type and correct linear dimension for the figure first";
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();

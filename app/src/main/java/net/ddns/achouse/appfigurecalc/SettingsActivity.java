@@ -20,10 +20,18 @@ public class SettingsActivity extends AppCompatActivity {
         EditText editText_numberOfFigures = (EditText) findViewById(R.id.SA_numberOfFigures);
         EditText editText_min = (EditText) findViewById(R.id.SA_min);
         EditText editText_max = (EditText) findViewById(R.id.SA_max);
-        if (editText_numberOfFigures.getText().toString().equals("") || editText_min.getText().toString().equals("") || editText_max.getText().toString().equals("")) {
+        if (
+                editText_numberOfFigures.getText().toString().equals("")
+                        || editText_min.getText().toString().equals("")
+                        || editText_max.getText().toString().equals("")
+                        || (editText_min.getText().toString().charAt(0) == '.')
+                        || (editText_max.getText().toString().charAt(0) == '.')
+                        || (editText_max.getText().toString().charAt(editText_max.getText().toString().length()-1)== '.')
+                        || (editText_min.getText().toString().charAt(editText_min.getText().toString().length()-1)== '.')
+                ) {
             //piec ponizszych linijek to wyświetlenie po prostu tego komunikatu ten alert nazywa sie toastem
             Context context = getApplicationContext();
-            CharSequence text = "Fill all settings fields!";
+            CharSequence text = "Fill all settings fields correctly!";
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
