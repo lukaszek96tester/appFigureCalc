@@ -231,9 +231,9 @@ public class ActivityShowFigures extends AppCompatActivity {
                                 goToAddActivity();
                                 break;
 //TODO dokonczyc przejscia do pozostalych aktywnosci
-//                            case R.id.nav_display_statistics:
-//                                fragmentClass = CatalogFragment.class;
-//                                break;
+                            case R.id.nav_display_statistics:
+                                goToShowStatisticsActivity();
+                                break;
                             case R.id.nav_settings:
                                 goToSettingsActivity();
                                 break;
@@ -387,6 +387,15 @@ public class ActivityShowFigures extends AppCompatActivity {
         Intent Intent = new Intent(getBaseContext(),AddActivity.class);
         // Start AddActivity waiting for result
         startActivityForResult(Intent, 1);
+    }
+
+    public void goToShowStatisticsActivity() {
+        Intent intent = new Intent(getBaseContext(), ActivityShowStatistics.class);
+        Bundle bundle = new Bundle();
+
+        bundle.putParcelableArrayList("figuresData", figuresList);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     public void goToSettingsActivity() {

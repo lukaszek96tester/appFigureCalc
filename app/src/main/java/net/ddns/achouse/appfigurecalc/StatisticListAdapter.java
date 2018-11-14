@@ -55,9 +55,22 @@ public class StatisticListAdapter extends BaseAdapter {
                 break;
         }
 
-        holder.uNumber.setText(String.valueOf(listData.get(position).getNumber()));
-        holder.uAverageArea.setText(String.valueOf(listData.get(position).getAverageArea()));
-        holder.uAveragePerimeter.setText(String.valueOf(listData.get(position).getAveragePerimeter()));
+        String NumberFixed = String.valueOf(listData.get(position).getNumber());
+        NumberFixed = (NumberFixed + "000000").substring(0, 5);
+        holder.uNumber.setText(NumberFixed);
+
+        String AverageAreaFixed = String.valueOf(listData.get(position).getAverageArea());
+        AverageAreaFixed = (AverageAreaFixed + "000000").substring(0, 5);
+        holder.uAverageArea.setText(AverageAreaFixed);
+
+        String AveragePerimeterFixed = String.valueOf(listData.get(position).getAveragePerimeter());
+        AveragePerimeterFixed = (AveragePerimeterFixed + "000000").substring(0, 5);
+        holder.uAveragePerimeter.setText(AveragePerimeterFixed);
+
+
+//        holder.uNumber.setText(String.valueOf(listData.get(position).getNumber()));
+//        holder.uAverageArea.setText(String.valueOf(listData.get(position).getAverageArea()));
+//        holder.uAveragePerimeter.setText(String.valueOf(listData.get(position).getAveragePerimeter()));
         return v;
     }
     static class ViewHolder {
