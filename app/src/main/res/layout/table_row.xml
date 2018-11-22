@@ -14,25 +14,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingLeft="85dp"
+        android:paddingLeft="75dp"
         android:layout_centerVertical="true"
         android:gravity="right"
         android:textSize="14dp"
         android:maxLines="1"
-        android:maxLength="5"
+        android:maxLength="9"
         android:ellipsize="end"/>
     <TextView
         android:id="@+id/area"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingRight="53dp"
+        android:paddingRight="43dp"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@id/perimeter"
         android:gravity="right"
         android:textSize="14dp"
         android:maxLines="1"
-        android:maxLength="5"
+        android:maxLength="9"
         android:ellipsize="end"/>
     <TextView
         android:id="@+id/perimeter"
@@ -44,7 +44,7 @@
         android:gravity="right"
         android:textSize="14dp"
         android:maxLines="1"
-        android:maxLength="5"
+        android:maxLength="9"
         android:paddingRight="54dp"
         android:ellipsize="end"/>
 </RelativeLayout>

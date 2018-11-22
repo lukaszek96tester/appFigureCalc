@@ -14,25 +14,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingLeft="88dp"
+        android:paddingLeft="57dp"
         android:layout_centerVertical="true"
         android:gravity="right"
         android:textSize="14dp"
         android:maxLines="1"
-        android:maxLength="5"
+        android:maxLength="9"
         android:ellipsize="end"/>
     <TextView
         android:id="@+id/averageArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingRight="70dp"
+        android:paddingRight="35dp"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@id/averagePerimeter"
         android:gravity="right"
         android:textSize="14dp"
         android:maxLines="1"
-        android:maxLength="5"
+        android:maxLength="9"
         android:ellipsize="end"/>
     <TextView
         android:id="@+id/averagePerimeter"
@@ -44,7 +44,7 @@
         android:gravity="right"
         android:textSize="14dp"
         android:maxLines="1"
-        android:maxLength="5"
+        android:maxLength="9"
         android:paddingRight="80dp"
         android:ellipsize="end"/>
 </RelativeLayout>
